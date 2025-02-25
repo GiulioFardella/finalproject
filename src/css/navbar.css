@@ -1,0 +1,103 @@
+/* Navbar principale */
+#generalnavbar {
+  background-color: white; /* Sfondo navbar */
+  border-bottom: 2px solid #ddd; /* Leggera linea sotto */
+  padding: 10px 0;
+}
+
+/* Contenitore per la navbar */
+.custom-container {
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.logo {
+  height: auto; /* Mantiene le proporzioni */
+  max-width: 180px; /* Dimensione massima */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Logo responsivo */
+@media screen and (max-width: 768px) {
+  .logo {
+    max-width: 140px; /* Più piccolo su tablet */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .logo {
+    max-width: 100px; /* Ancora più piccolo su mobile */
+  }
+}
+
+/* Voci del menu */
+#generalnavbar .nav-link,
+#generalnavbar .navbar-brand,
+#generalnavbar .nav-dropdown {
+  color: black !important;
+  font-weight: 500;
+}
+
+/* Effetto hover sulle voci */
+#generalnavbar .nav-link:hover {
+  color: #007bff !important; /* Colore blu al passaggio del mouse */
+}
+
+/* Barra di ricerca */
+.search-bar {
+  width: 100%;
+  max-width: 300px; /* Larghezza massima */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Responsive: riduzione barra ricerca */
+@media screen and (max-width: 768px) {
+  .search-bar {
+    max-width: 200px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .search-bar {
+    max-width: 120px;
+  }
+}
+
+/* Immagine profilo */
+#profilepic {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+
+#basic-nav-dropdown {
+  font-weight: 900;
+  font-style: italic;
+}
+/* ////////////////////////////77 HABITAT /////////////////////////////// */
+
+#habitat1 {
+  color: rgb(0, 0, 0);
+  background-color: var(--green);
+}
+#habitat2 {
+  color: rgb(0, 0, 0);
+  background-color: var(--yellow);
+}
+#habitat3 {
+  color: rgb(0, 0, 0);
+  background-color: var(--green);
+}
+#habitat4 {
+  color: rgb(0, 0, 0);
+  background-color: var(--orange);
+}
+#habitat5 {
+  color: rgb(0, 0, 0);
+  background-color: var(--purple);
+}

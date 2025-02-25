@@ -1,70 +1,162 @@
-# Getting Started with Create React App
+1️⃣ Mammiferi (i più a rischio) 🐾
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+🔴 In Pericolo Critico (CR)
 
-## Available Scripts
+1. Leopardo dell'Amur (Panthera pardus orientalis)
+2. Rinoceronte di Giava (Rhinoceros sondaicus)
+3. Orango del Tapanuli (Pongo tapanuliensis)
 
-In the project directory, you can run:
+🟠 In Pericolo (EN) 4. Gorilla di montagna (Gorilla beringei beringei) 5. Elefante di Sumatra (Elephas maximus sumatranus) 6. Tigre del Bengala (Panthera tigris tigris)
 
-### `npm start`
+🟡 Vulnerabile (VU) 7. Panda Gigante (Ailuropoda melanoleuca) 8. Bradipo pigmeo (Bradypus pygmaeus)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+/////////////////////////////////////////////////////////////////////////////////////////////////////
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2️⃣ Uccelli 🦜
 
-### `npm test`
+🔴 In Pericolo Critico (CR) 9. Pappagallo Ara di Spix (Cyanopsitta spixii) 10. Condor della California (Gymnogyps californianus) 11. Sturnella di Ridgway (Xenoperdix udzungwensis)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+🟠 In Pericolo (EN) 12. Pinguino di Magellano (Spheniscus magellanicus) 13. Aquila delle Filippine (Pithecophaga jefferyi)
 
-### `npm run build`
+🟡 Vulnerabile (VU) 14. Fenicottero andino (Phoenicoparrus andinus) 15. Gufo delle nevi (Bubo scandiacus)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+////////////////////////////////////////////////////////////////////////////////////////////////////
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3️⃣ Rettili e Anfibi 🦎🐸
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+🔴 In Pericolo Critico (CR) 16. Tartaruga Angonoka (Astrochelys yniphora) 17. Axolotl messicano (Ambystoma mexicanum) 18. Gecko dell’isola di Union (Gehyra borbonica)
 
-### `npm run eject`
+🟠 In Pericolo (EN) 19. Coccodrillo delle Filippine (Crocodylus mindorensis) 20. Vipera dell’Ursini (Vipera ursinii)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+🟡 Vulnerabile (VU) 21. Camaleonte di Parson (Calumma parsonii)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4️⃣ Pesci e Animali Marini 🐠🐋
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+🔴 In Pericolo Critico (CR) 22. Vaquita (focena del Golfo di California) (Phocoena sinus) 23. Squalo martello maggiore (Sphyrna mokarran) 24. Razza d’acqua dolce gigante (Urogymnus polylepis)
 
-## Learn More
+🟠 In Pericolo (EN) 25. Tartaruga liuto (Dermochelys coriacea) 26. Pesce Napoleone (Cheilinus undulatus)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+🟡 Vulnerabile (VU) 27. Murena gigante (Gymnothorax javanicus)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+////////////////////////////////////////////////////////////////////////////////////////////////////
 
-### Code Splitting
+5️⃣ Invertebrati 🦋🐞 (i meno a rischio, ma comunque minacciati)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+🔴 In Pericolo Critico (CR) 28. Farfalla Parnassius apollo (Parnassius apollo)
 
-### Analyzing the Bundle Size
+🟠 In Pericolo (EN) 29. Gambero d’acqua dolce della Tasmania (Astacopsis gouldi)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+🟡 Vulnerabile (VU) 30. Farfalla Monarca (Danaus plexippus)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡🟡
 
-### Advanced Configuration
+🔹 1. Aggiungere un tocco emozionale e di storytelling
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+💡 Problema: L’utente potrebbe sentirsi distante dall’animale che adotta.
+✅ Soluzione: Creare storie personalizzate per ogni animale con foto, video e aggiornamenti periodici.
 
-### Deployment
+📌 Esempio UX:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+    Ogni animale ha una scheda con la sua storia unica (es. “Tigrino è stato salvato da una foresta minacciata dal disboscamento…”)
+    Diario dell’animale: piccoli aggiornamenti automatici ogni mese (con AI o da volontari reali)
+    Se l’utente dona, riceve un "Certificato di Adozione" personalizzato
 
-### `npm run build` fails to minify
+🔹 2. Creare un modello di adozione più dinamico
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+💡 Problema: Le donazioni una tantum potrebbero non garantire un supporto continuativo.
+✅ Soluzione: Un modello di abbonamento con livelli di adozione.
+
+📌 Esempio UX:
+
+    Adotta un animale per X€/mese con benefici esclusivi (es. newsletter con aggiornamenti sull’animale, badge speciali, video esclusivi).
+    Livelli di supporto: "Sostenitore 🐾" (5€/mese), "Guardiano 🌱" (10€/mese), "Salvatore 🌍" (20€/mese)
+    Potenziamento comunità: Creare un gruppo Discord o una sezione commenti per chi adotta lo stesso animale.
+
+🔹 3. Gamification per incentivare l’interazione
+
+💡 Problema: Dopo la donazione, l’utente potrebbe perdere interesse.
+✅ Soluzione: Creare un sistema di premi e obiettivi per incentivare il ritorno sull’app.
+
+📌 Esempio UX:
+
+    Badge di adozione: Se l’utente adotta più animali, guadagna badge esclusivi.
+    Missioni settimanali: “Condividi la storia di un animale su Instagram e guadagna XP”
+    Leaderboard dei donatori: Chi dona di più potrebbe apparire in una bacheca speciale
+
+🔹 4. Maggiore trasparenza per aumentare la fiducia
+
+💡 Problema: Gli utenti vogliono essere sicuri che i soldi vadano davvero agli animali.
+✅ Soluzione: Mostrare dati chiari sulle donazioni.
+
+📌 Esempio UX:
+
+    Progress bar per ogni animale: “Obiettivo: 5.000€, Raccolti: 3.200€”
+    Report di impatto trimestrale → "Grazie alle donazioni, abbiamo salvato 12 tigri del Bengala!"
+    Trasparenza sui costi → "80% dei fondi va direttamente alla protezione degli animali"
+
+🔹 5. Integrazione con Social Media per aumentare la visibilità
+
+💡 Problema: L’app potrebbe avere difficoltà a farsi conoscere.
+✅ Soluzione: Incentivare la condivisione e il coinvolgimento sociale.
+
+📌 Esempio UX:
+
+    Generazione automatica di post: Dopo una donazione, l’utente può condividere un post con la scritta: "Ho appena adottato un panda gigante! 🐼 Vuoi unirti a me nel salvare la fauna selvatica?"
+    Filtro Instagram AR: Un filtro che fa apparire l’animale adottato accanto a te in AR (tipo Pokemon GO)
+    Sfide social: Se un utente condivide un post e altri donano tramite il suo link → riceve punti extra
+
+🔹 6. Estendere il modello oltre le donazioni
+
+💡 Problema: Alcuni utenti potrebbero voler supportare, ma senza fare donazioni dirette.
+✅ Soluzione: Integrare altre forme di supporto, come acquisti solidali o volontariato virtuale.
+
+📌 Esempio UX:
+
+    Marketplace solidale: T-shirt, gadget e poster → "Acquista e aiuta gli animali"
+    Programmi di volontariato online: Creare contenuti, fare traduzioni, supportare sui social
+    Partnership con aziende: Dare la possibilità di piantare un albero per ogni adozione
+
+🔹 7. Un’idea innovativa: Animali in Realtà Aumentata (AR)
+
+💡 Problema: L’adozione digitale potrebbe sembrare "fredda".
+✅ Soluzione: Aggiungere una funzione di Realtà Aumentata (AR) per vedere l’animale nel proprio spazio.
+
+📌 Esempio UX:
+
+    L’utente può vedere l’animale adottato in AR nel proprio salotto e scattare foto con lui.
+    Collegamento con la fotocamera del telefono per animazioni (es. il panda cammina accanto a te!).
+
+/////////////////////////////////////////////////////
+
+CATEGORIE ANIMALI A RISCHIO 
+
+🔴 
+- leopardo
+- rinoceronte 
+- orango 
+- pappagallo
+- condor
+- tartaruga
+- axotol 
+- squalo 
+- razza
+- farfalla 
+
+-------------------
+🟠
+- gorilla
+- tigre
+- pinguino
+- aquila
+- coccodrillo
+- vipera
+- pesce napoleone 
+
+--------------------
+🟡
+- panda
+- fenicottero
+- murena

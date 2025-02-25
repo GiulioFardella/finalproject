@@ -1,0 +1,63 @@
+.carousel-container {
+    position: relative;
+    width: 100%;
+}
+
+.fixed-message {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+   
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    z-index: 10;
+    width: 90%; /* Usa % per adattarlo alla larghezza dello schermo */
+    max-width: 1000px; /* Limita la larghezza su schermi grandi */
+}
+
+/* Titolo più grande su desktop, più piccolo su mobile */
+.fixed-message h2 {
+    margin: 0;
+    font-size: 6.5rem; /* Usa rem per adattarsi */
+}
+
+/* Paragrafo adattabile */
+.fixed-message p {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+/* 📱 Stili per dispositivi mobili */
+@media screen and (max-width: 768px) {
+    .fixed-message {
+        width: 95%;
+        padding: 0.8rem 1.5rem;
+    }
+
+    .fixed-message h2 {
+        font-size: 2rem; /* Più piccolo su mobile */
+    }
+
+    .fixed-message p {
+        font-size: 0.9rem;
+    }
+}
+
+/* 📱 Stili per schermi molto piccoli (es. telefoni < 480px) */
+@media screen and (max-width: 480px) {
+    .fixed-message {
+        width: 100%;
+        padding: 0.5rem 1rem;
+    }
+
+    .fixed-message h2 {
+        font-size: 1.5rem;
+    }
+
+    .fixed-message p {
+        font-size: 0.8rem;
+    }
+}
