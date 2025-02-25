@@ -1,6 +1,6 @@
 /* Navbar principale */
 #generalnavbar {
-  background-color: white; /* Sfondo navbar */
+  background-color: transparent; /* Sfondo navbar */
   border-bottom: 2px solid #ddd; /* Leggera linea sotto */
   padding: 10px 0;
 }
@@ -17,7 +17,7 @@
 /* Logo */
 .logo {
   height: auto; /* Mantiene le proporzioni */
-  max-width: 180px; /* Dimensione massima */
+  max-width: 250px; /* Dimensione massima */
   transition: all 0.3s ease-in-out;
 }
 
