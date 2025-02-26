@@ -8,7 +8,7 @@
 /* Contenitore per la navbar */
 .custom-container {
   width: 90%;
-  max-width: 1200px;
+  max-width: 1800px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -54,6 +54,10 @@
   transition: all 0.3s ease-in-out;
 }
 
+.searchfield {
+  margin-left: 2px;
+}
+
 /* Responsive: riduzione barra ricerca */
 @media screen and (max-width: 768px) {
   .search-bar {
@@ -80,6 +84,15 @@
   font-style: italic;
 }
 /* ////////////////////////////77 HABITAT /////////////////////////////// */
+
+.custom-dropdown .dropdown-menu {
+  
+  font-size: 1.2rem;
+
+  
+}
+
+
 
 #habitat1 {
   color: rgb(0, 0, 0);

@@ -22,14 +22,14 @@ function MyNavbar() {
 
         {/* Navbar Items */}
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mx-auto d-flex align-items-center gap-4 fs-6">
+          <Nav className="mx-auto d-flex align-items-center gap-5 fs-6">
             <Nav.Link href="#link">Chi siamo</Nav.Link>
             <Nav.Link href="#link">Cosa facciamo</Nav.Link>
             <Nav.Link href="#link">Perché è importante?</Nav.Link>
             <Nav.Link href="#link">Interventi</Nav.Link>
             <Nav.Link href="#link">Newsletter</Nav.Link>
-            <NavDropdown title="VOLONTARIATO" id="basic-nav-dropdown">
-              <div id="habitats"></div>
+            <NavDropdown title="VOLONTARIATO" id="basic-nav-dropdown" className="custom-dropdown">
+             
               <NavDropdown.Item href="#action/3.1" id="habitat1">
                 Giungla
               </NavDropdown.Item>
@@ -46,9 +46,10 @@ function MyNavbar() {
                 Montagna
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
+              <NavDropdown.Item href="#action/3.4" >
+                rinuncia ad una missione
               </NavDropdown.Item>
+              
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
@@ -56,7 +57,8 @@ function MyNavbar() {
         {/* Form di ricerca e profilo */}
         <Form className="d-flex search-bar">
           <InputGroup>
-            <Form.Control placeholder="Cerca..." aria-label="Search" />
+            <Form.Control className="searchfield" placeholder="Cerca..." aria-label="Search"
+             />
           </InputGroup>
           <Nav.Link href="#link" className="ms-4">
             <img id="profilepic" src={orango2} alt="Profilo" />

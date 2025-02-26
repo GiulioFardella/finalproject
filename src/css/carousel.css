@@ -6,7 +6,7 @@
 
 .fixed-message {
     position: absolute;
-    top: 80%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -15,23 +15,23 @@
     padding: 1rem 2rem;
     border-radius: 10px;
     z-index: 10;
-    width: 90%; /* Usa % per adattarlo alla larghezza dello schermo */
-    max-width: 1000px; /* Limita la larghezza su schermi grandi */
+    width: 90%; 
+    max-width: 1000px; 
 }
 
-/* Titolo più grande su desktop, più piccolo su mobile */
+
 .fixed-message h2 {
     margin: 0;
-    font-size: 6.5rem; /* Usa rem per adattarsi */
+    font-size: 6.5rem; 
 }
 
-/* Paragrafo adattabile */
+
 .fixed-message p {
-    font-size: 1rem;
+    font-size: 2.5rem;
     margin-top: 0.5rem;
 }
 
-/* 📱 Stili per dispositivi mobili */
+
 @media screen and (max-width: 768px) {
     .fixed-message {
         width: 95%;
@@ -62,3 +62,4 @@
         font-size: 0.8rem;
     }
 }
+
