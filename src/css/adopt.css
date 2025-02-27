@@ -1,3 +1,14 @@
 .button {
     background-color: var(--green);
 }
+#generalAdoption {
+    background-color: var(--green);
+}
+
+.h1ado {
+    color: white;
+}
+
+.cardbody {
+    background-color: var(--green);
+}

@@ -35,11 +35,11 @@
 
 .adopt-link h3 {
   text-decoration: none;
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: bold;
   display: inline-block;
   padding: 10px 20px;
-  color: white;
+  color :white;
   border: solid 7px white;
 }
 

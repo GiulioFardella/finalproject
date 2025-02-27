@@ -64,7 +64,7 @@
 
 /* Effetto hover sulle voci */
 #generalnavbar .nav-link:hover {
-  color: #007bff !important; /* Colore blu al passaggio del mouse */
+  color: var(--purple) /* Colore blu al passaggio del mouse */
 }
 
 /* Barra di ricerca */

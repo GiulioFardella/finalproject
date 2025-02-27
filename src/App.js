@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Footer from "./components/Footer";
 import MyNavbar from "./components/MyNavbar";
 import MyCarousel from "./components/MyCarousel";
 import AdoptPage from "./components/AdoptPage";
-import LoginModal from "./components/LoginModal"; // Importa il modale
+import LoginModal from "./components/LoginModal"; 
+import Profile from "./components/Profile";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import RegisterPage from "./components/RegisterPage";
 function App() {
@@ -20,10 +22,11 @@ function App() {
       <LoginModal show={showModal} handleClose={() => setShowModal(false)} />
       <Routes>
         <Route path="/" element={<MyCarousel />} />
-
+       <Route path="/profilo" element={<Profile/>}/>
         <Route path="/adozione" element={<AdoptPage />} />
         <Route path="/registrazione" element={<RegisterPage/>} />
       </Routes>
+      <Footer/>
     </BrowserRouter>
   );
 }

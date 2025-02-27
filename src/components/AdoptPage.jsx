@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Card, Button, Container, Row, Col } from "react-bootstrap";
 import "../css/adopt.css"
+import "../assets/fern.jpg"
 // Dati degli animali (simulazione, puoi sostituire con un database)
 const animals = [
   {
@@ -102,9 +103,11 @@ const animals = [
 
 function AdoptPage() {
   return (
-    <Container className="mt-5">
-      <h1 className="text-center">Adotta un Animale</h1>
-      <p className="text-center">
+    <div id="generalAdoption">
+      
+    <Container >
+      <h1 className="text-center h1ado">Adotta un Animale</h1>
+      <p className="text-center h1ado">
         Scegli un animale e aiutaci a proteggerlo con la tua donazione.
       </p>
 
@@ -113,11 +116,11 @@ function AdoptPage() {
           <Col key={animal.id} lg={3} md={4} xs={12} className="mb-4">
             <Card>
               <Card.Img variant="top" src={animal.image} alt={animal.name} />
-              <Card.Body>
+              <Card.Body className="cardbody">
                 <Card.Title>{animal.name}</Card.Title>
                 <Card.Text>{animal.description}</Card.Text>
                 <Link to={`/adozione/${animal.id}`}>
-                  <Button className="button">Scopri di più</Button>
+                  <Button className="button">Adotta</Button>
                 </Link>
               </Card.Body>
             </Card>
@@ -125,6 +128,7 @@ function AdoptPage() {
         ))}
       </Row>
     </Container>
+        </div>
   );
 }
 
