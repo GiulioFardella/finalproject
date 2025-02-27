@@ -5,6 +5,10 @@
   padding: 10px 0;
 }
 
+.navlink {
+  font-size: 1.3rem;
+}
+
 /* Contenitore per la navbar */
 .custom-container {
   width: 90%;
@@ -13,6 +17,7 @@
   justify-content: space-between;
   align-items: center;
 }
+
 
 /* Logo */
 .logo {
@@ -35,11 +40,26 @@
 }
 
 /* Voci del menu */
+#generalnavbar .navbar-collapse {
+  display: flex;
+  justify-content: center; /* Centra le voci */
+  flex-grow: 1;
+}
+
+#generalnavbar .nav {
+  display: flex;
+  justify-content: space-between; /* Spaziatura uniforme */
+  width: 100%;
+  flex-wrap: nowrap;
+}
+
 #generalnavbar .nav-link,
 #generalnavbar .navbar-brand,
 #generalnavbar .nav-dropdown {
   color: black !important;
   font-weight: 500;
+  white-space: nowrap; /* Impedisce il ritorno a capo */
+  padding: 0 15px; /* Aggiunge spazio tra le voci */
 }
 
 /* Effetto hover sulle voci */
@@ -50,7 +70,7 @@
 /* Barra di ricerca */
 .search-bar {
   width: 100%;
-  max-width: 300px; /* Larghezza massima */
+  max-width: 300px; /* Larghezza originale ripristinata */
   transition: all 0.3s ease-in-out;
 }
 
@@ -61,13 +81,14 @@
 /* Responsive: riduzione barra ricerca */
 @media screen and (max-width: 768px) {
   .search-bar {
-    max-width: 200px;
+    max-width: 300px; /* Larghezza originale su tablet */
   }
 }
 
 @media screen and (max-width: 480px) {
   .search-bar {
-    max-width: 120px;
+   display: none !important;
+   visibility: hidden; /* Larghezza originale su mobile */
   }
 }
 
@@ -83,16 +104,16 @@
   font-weight: 900;
   font-style: italic;
 }
-/* ////////////////////////////77 HABITAT /////////////////////////////// */
 
-.custom-dropdown .dropdown-menu {
-  
-  font-size: 1.2rem;
-
-  
+/* //////////////////////////// HABITAT /////////////////////////////// */
+.custom-dropdown {
+  font-size: 1.3rem;
+  margin-right: 1rem;
 }
 
-
+.custom-dropdown .dropdown-menu {
+  font-size: 1.3rem;
+}
 
 #habitat1 {
   color: rgb(0, 0, 0);
@@ -113,4 +134,16 @@
 #habitat5 {
   color: rgb(0, 0, 0);
   background-color: var(--purple);
+}
+
+/* Responsive: gestione navbar su schermi piccoli */
+@media screen and (max-width: 968px) {
+  #generalnavbar .nav {
+    flex-wrap: wrap; /* Consenti il wrap se necessario su schermi piccoli */
+    justify-content: center; /* Centra su schermi piccoli */
+  }
+
+  #generalnavbar .nav-link {
+    padding: 0 10px; /* Riduci lo spazio tra voci */
+  }
 }

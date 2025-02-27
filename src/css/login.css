@@ -1,0 +1,11 @@
+.login-buttons .button {
+   background-color: var(--green);
+   
+}
+.generalModal {
+    background-color: rgb(87, 74, 74);
+    color: white;
+    height: 17rem;
+    
+}
+

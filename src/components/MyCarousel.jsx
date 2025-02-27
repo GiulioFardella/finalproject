@@ -10,11 +10,14 @@ import leopardo3 from "../assets/animals/Mammiferi/Leopardo Amur/leopardo3.jpeg"
 import snake1 from "../assets/animals/Rettili/serpente/snake1.jpg";
 import croco1 from "../assets/animals/Rettili/coccodrillo/croco1.jpg";
 import gorilla1 from "../assets/animals/Mammiferi/gorilla/gorilla1.jpg";
-
+import people1 from "../assets/people/people1.png";
+import people2 from "../assets/people/people2.jpg";
+import people3 from "../assets/people/people3.jpg";
+import people4 from "../assets/people/people4.jpg";
 import "../css/carousel.css";
 
 function MyCarousel() {
-  const images = [tigre4, shark3, moray4, leopardo3, snake1, croco1, gorilla1];
+  const images = [people1,people2,people3,people4, tigre4, shark3, moray4, leopardo3, snake1, croco1, gorilla1];
 
   const [shuffledImages, setShuffledImages] = useState([]);
 
@@ -43,11 +46,12 @@ function MyCarousel() {
 
       <div className="fixed-message">
   <h2>Salviamo gli animali in via d'estinzione</h2>
+  <h4> Adotta un animale o partecipa alle missioni aiutandoci sul campo!</h4>
   <br />
   <p>Ogni contributo conta, unisciti a noi per proteggere la fauna selvatica.</p>
 
   {/* 🟢 Trasformiamo il titolo in un link */}
-  <Link to="/adozione" className="adopt-link">
+  <Link to={"/adozione"} className="adopt-link">
     <h3>ADOTTA UN ANIMALE</h3>
   </Link>
 </div>

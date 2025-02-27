@@ -13,7 +13,7 @@ function MyNavbar() {
     <Navbar expand="lg" id="generalnavbar">
       <Container className="custom-container">
         {/* Logo */}
-        <Navbar.Brand href="#home" className="logo-container">
+        <Navbar.Brand href="/" className="logo-container">
           <img src={logo} alt="logo" className="logo" />
         </Navbar.Brand>
 
@@ -23,12 +23,12 @@ function MyNavbar() {
         {/* Navbar Items */}
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mx-auto d-flex align-items-center gap-5 fs-6">
-            <Nav.Link href="#link">Chi siamo</Nav.Link>
-            <Nav.Link href="#link">Cosa facciamo</Nav.Link>
-            <Nav.Link href="#link">Perché è importante?</Nav.Link>
-            <Nav.Link href="#link">Interventi</Nav.Link>
-            <Nav.Link href="#link">Newsletter</Nav.Link>
-            <NavDropdown title="VOLONTARIATO" id="basic-nav-dropdown" className="custom-dropdown">
+            <Nav.Link href="#link" className="navlink" >Chi siamo</Nav.Link>
+            <Nav.Link href="#link" className="navlink"  >Cosa facciamo</Nav.Link>
+            <Nav.Link href="#link" className="navlink"  >Perché è importante?</Nav.Link>
+            <Nav.Link href="#link" className="navlink"  >Interventi</Nav.Link>
+           
+            <NavDropdown title="PARTECIPA A UNA MISSIONE" id="basic-nav-dropdown" className="custom-dropdown">
              
               <NavDropdown.Item href="#action/3.1" id="habitat1">
                 Giungla
@@ -60,10 +60,10 @@ function MyNavbar() {
             <Form.Control className="searchfield" placeholder="Cerca..." aria-label="Search"
              />
           </InputGroup>
-          <Nav.Link href="#link" className="ms-4">
+        </Form>
+          <Nav.Link href="#link" className="ms-4 profile-container">
             <img id="profilepic" src={orango2} alt="Profilo" />
           </Nav.Link>
-        </Form>
       </Container>
     </Navbar>
   );
