@@ -13,12 +13,13 @@ function LoginModal({ show, handleClose }) {
   };
 
   return (
-    <Modal show={show} onHide={handleClose} centered className="modal-container">
+    <Modal show={show} onHide={handleClose} centered className="modal-container ">
+      <div className="modal-content">
       <Modal.Header closeButton className="generalModal">
-        <Modal.Title>Accedi o Registrati</Modal.Title>
+        <Modal.Title className="modaltitle">Accedi o Registrati</Modal.Title>
       </Modal.Header>
-      <Modal.Body className="generalModal">
-        <Form onSubmit={handleLogin}> {/* Il form usa handleLogin */}
+      <Modal.Body className="generalModal ">
+        <Form  onSubmit={handleLogin}> {/* Il form usa handleLogin */}
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email</Form.Label>
             <Form.Control type="email" placeholder="Inserisci email" required />
@@ -31,11 +32,11 @@ function LoginModal({ show, handleClose }) {
 
           <div className="loginButtons d-flex justify-content-around">
             {/* Accedi: il submit chiama handleLogin */}
-            <Button type="submit" className="button">
+            <Button type="submit" className="button" >
               Accedi
             </Button>
 
-            <div>
+           
               {/* Registrati: chiude il modale e naviga */}
               <Button
                 type="button"
@@ -47,10 +48,11 @@ function LoginModal({ show, handleClose }) {
               >
                 Registrati
               </Button>
-            </div>
+           
           </div>
         </Form>
       </Modal.Body>
+      </div>
     </Modal>
   );
 }

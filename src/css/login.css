@@ -1,16 +1,23 @@
-.login-buttons .button {
-   background-color: var(--green);
-   
-}
-.modal-container {
-    border-radius: 50%;
-}
 
 .generalModal {
-    background-color: rgb(155, 135, 135);
     color: white;
     height: 17rem;
+ 
+    background-color: var(--orange);
+    margin-top:2rem;
     
-    
+}
+.modaltitle {
+    font-weight:60px;
+    font-size:2rem;
+    margin-bottom:5px;
+
+}
+.modal-content {
+    background-color: var(--orange);
+}
+
+.bottomform {
+    background-color: var(--orange);
 }
 

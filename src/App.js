@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import { useState, useEffect } from "react";
 import Footer from "./components/Footer";
 import MyNavbar from "./components/MyNavbar";
 import MyCarousel from "./components/MyCarousel";

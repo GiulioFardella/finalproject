@@ -1,6 +1,6 @@
 /* 🌿 Stili generali */
 #generalAdoption {
-    background: linear-gradient(135deg, #004d00, #008000); /* Verde più profondo */
+    background: linear-gradient(135deg, #004d00,var(--green)); /* Verde più profondo */
     padding: 50px 0;
 }
 
@@ -36,8 +36,8 @@
     background: rgba(255, 255, 255, 0.9);
     padding: 15px;
     text-align: center;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
 }
 
 /* 🟢 Pulsante "Adotta" */
