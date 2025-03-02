@@ -13,7 +13,7 @@ function LoginModal({ show, handleClose }) {
   };
 
   return (
-    <Modal show={show} onHide={handleClose} centered>
+    <Modal show={show} onHide={handleClose} centered className="modal-container">
       <Modal.Header closeButton className="generalModal">
         <Modal.Title>Accedi o Registrati</Modal.Title>
       </Modal.Header>

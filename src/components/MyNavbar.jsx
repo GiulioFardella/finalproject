@@ -1,17 +1,13 @@
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import Form from "react-bootstrap/Form";
-import InputGroup from "react-bootstrap/InputGroup";
-import "../css/navbar.css"; // Importa il CSS
+import { useState, useEffect } from "react";
+import { Navbar, Nav, NavDropdown, Container, Form, InputGroup } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import orango2 from "../assets/animals/Mammiferi/orango/orango2.jpg";
-import Profile from "./Profile";
-import { Link } from "react-router-dom";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import "../css/navbar.css"
 function MyNavbar() {
+
+   
+
   return (
     <Navbar expand="lg" id="generalnavbar">
       <Container className="custom-container">

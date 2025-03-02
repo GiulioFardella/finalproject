@@ -1,3 +1,6 @@
 .profile-container {
-
+    background: linear-gradient(135deg, #004d00, #008000)
+}
+.missiondiv {
+    margin-bottom: 2rem;
 }

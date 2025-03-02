@@ -2,10 +2,15 @@
    background-color: var(--green);
    
 }
+.modal-container {
+    border-radius: 50%;
+}
+
 .generalModal {
-    background-color: rgb(87, 74, 74);
+    background-color: rgb(155, 135, 135);
     color: white;
     height: 17rem;
+    
     
 }
 

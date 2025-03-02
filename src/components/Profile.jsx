@@ -1,17 +1,19 @@
-
 import { useState } from "react";
 import { Container, Row, Col, Card, Button, Form } from "react-bootstrap";
 import "../css/profile.css"; // Importa il CSS
-
 
 function Profile() {
   // Stato per i dati utente
   const [user, setUser] = useState({
     name: "Mario Rossi",
+    username: "mariorossi93",
     email: "mario.rossi@email.com",
+    address: "Via Roma, 10, Milano",
+    phone: "+39 333 1234567",
+    website: "www.mariorossi.com",
     bio: "Amo la natura e mi impegno per proteggerla! 🌍",
     missions: ["Salvataggio tartarughe", "Pulizia foresta amazzonica"],
-    
+    profilePic: "https://via.placeholder.com/150"
   });
 
   // Stato per la modifica del profilo
@@ -23,26 +25,23 @@ function Profile() {
     setEditedUser({ ...editedUser, [e.target.name]: e.target.value });
   };
 
-  // Funzione per salvare le modifiche
+  // Funzione per salvare le modifiche 
   const handleSave = () => {
     setUser(editedUser);
     setEditing(false);
   };
 
   return (
+    <div className="profile-container">
     <Container className="profile-container">
       <Row className="justify-content-center">
         <Col md={8}>
           <Card className="profile-card">
             <Card.Body className="text-center">
               {/* Foto Profilo */}
-              <img
-                src={user.profilePic}
-                alt="Profile"
-                className="profile-img"
-              />
-              
-              {/* Nome e Email */}
+              <img src={user.profilePic} alt="Profile" className="profile-img" />
+
+              {/* Nome e Informazioni */}
               {editing ? (
                 <Form>
                   <Form.Group controlId="formName">
@@ -54,12 +53,48 @@ function Profile() {
                       onChange={handleChange}
                     />
                   </Form.Group>
+                  <Form.Group controlId="formUsername" className="mt-3">
+                    <Form.Label>Username</Form.Label>
+                    <Form.Control
+                      type="text"
+                      name="username"
+                      value={editedUser.username}
+                      onChange={handleChange}
+                    />
+                  </Form.Group>
                   <Form.Group controlId="formEmail" className="mt-3">
                     <Form.Label>Email</Form.Label>
                     <Form.Control
                       type="email"
                       name="email"
                       value={editedUser.email}
+                      onChange={handleChange}
+                    />
+                  </Form.Group>
+                  <Form.Group controlId="formAddress" className="mt-3">
+                    <Form.Label>Indirizzo</Form.Label>
+                    <Form.Control
+                      type="text"
+                      name="address"
+                      value={editedUser.address}
+                      onChange={handleChange}
+                    />
+                  </Form.Group>
+                  <Form.Group controlId="formPhone" className="mt-3">
+                    <Form.Label>Numero di Telefono</Form.Label>
+                    <Form.Control
+                      type="text"
+                      name="phone"
+                      value={editedUser.phone}
+                      onChange={handleChange}
+                    />
+                  </Form.Group>
+                  <Form.Group controlId="formWebsite" className="mt-3">
+                    <Form.Label>Sito Web</Form.Label>
+                    <Form.Control
+                      type="text"
+                      name="website"
+                      value={editedUser.website}
                       onChange={handleChange}
                     />
                   </Form.Group>
@@ -80,8 +115,12 @@ function Profile() {
               ) : (
                 <>
                   <h2>{user.name}</h2>
-                  <p>{user.email}</p>
-                  <p className="bio">{user.bio}</p>
+                  <p><strong>Username:</strong> {user.username}</p>
+                  <p><strong>Email:</strong> {user.email}</p>
+                  <p><strong>Indirizzo:</strong> {user.address}</p>
+                  <p><strong>Telefono:</strong> {user.phone}</p>
+                  <p><strong>Sito Web:</strong> <a href={user.website}>{user.website}</a></p>
+                  <p className="bio"><strong>Bio:</strong> {user.bio}</p>
                   <Button variant="primary" onClick={() => setEditing(true)}>
                     Modifica Profilo
                   </Button>
@@ -91,7 +130,7 @@ function Profile() {
           </Card>
 
           {/* Sezione Missioni */}
-          <Card className="missions-card mt-4">
+          <Card className="missions-card mt-4 missiondiv">
             <Card.Body>
               <h3>Le mie missioni</h3>
               <ul>
@@ -104,8 +143,8 @@ function Profile() {
         </Col>
       </Row>
     </Container>
+    </div>
   );
 }
 
 export default Profile;
-
