@@ -21,9 +21,9 @@ function MyNavbar() {
         {/* Navbar Items */}
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mx-auto d-flex align-items-center gap-5 fs-6">
-            <Nav.Link href="#link" className="navlink">
+          <Link to={"/chisiamo"} href="#link" className="navlink">
               Chi siamo
-            </Nav.Link>
+            </Link>
             <Nav.Link href="#link" className="navlink">
               Cosa facciamo
             </Nav.Link>
@@ -43,7 +43,7 @@ function MyNavbar() {
                 Giungla
               </NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2" id="habitat2">
-                Pianura
+                Savana
               </NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3" id="habitat3">
                 Deserto
@@ -72,7 +72,7 @@ function MyNavbar() {
             />
           </InputGroup>
         </Form>
-        <Link to="/profilo" className="ms-4 profile-container">
+        <Link to="/profilo" className="ms-4 profile-container2">
           <img id="profilepic" src={orango2} alt="Profilo" />
         </Link>
       </Container>

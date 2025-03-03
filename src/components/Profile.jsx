@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Container, Row, Col, Card, Button, Form } from "react-bootstrap";
+///////////////////////////////////////
+import "../assets/fern.jpg"
 import "../css/profile.css"; // Importa il CSS
 
 function Profile() {
@@ -33,7 +35,7 @@ function Profile() {
 
   return (
     <div className="profile-container">
-    <Container className="profile-container">
+    <Container>
       <Row className="justify-content-center">
         <Col md={8}>
           <Card className="profile-card">

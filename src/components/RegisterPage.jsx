@@ -6,6 +6,7 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
 /////////////////////////
+import "../assets/fern1.jpg"
 import "../css/register.css"
 function RegisterPage() {
   const [validated, setValidated] = useState(false);
@@ -21,6 +22,7 @@ function RegisterPage() {
   };
 
   return (
+    <div className="global-register">
     <Container className="container-form">
     <Form noValidate validated={validated} onSubmit={handleSubmit} class="register-form">
       <Row className="mb-3">
@@ -98,10 +100,11 @@ function RegisterPage() {
           feedback="You must agree before submitting."
           feedbackType="invalid"
         />
+        <Button type="submit">Submit form</Button>
       </Form.Group>
-      <Button type="submit">Submit form</Button>
     </Form>
     </Container>
+    </div>
   );
 }
 

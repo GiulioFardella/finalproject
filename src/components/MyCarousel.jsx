@@ -14,10 +14,11 @@ import people1 from "../assets/people/people1.png";
 import people2 from "../assets/people/people2.jpg";
 import people3 from "../assets/people/people3.jpg";
 import people4 from "../assets/people/people4.jpg";
+import people5 from "../assets/people/people5.jpg";
 import "../css/carousel.css";
 
 function MyCarousel() {
-  const images = [people1,people2,people3,people4, tigre4, shark3, moray4, leopardo3, snake1, croco1, gorilla1];
+  const images = [people1,people2,people3,people4, tigre4, shark3, moray4, leopardo3, snake1, croco1, gorilla1,people5];
 
   const [shuffledImages, setShuffledImages] = useState([]);
 

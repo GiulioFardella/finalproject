@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Card, Button, Container, Row, Col } from "react-bootstrap";
 import "../css/adopt.css"
 import "../assets/fern.jpg"
+import Donation from "./Donation";
 // Dati degli animali (simulazione, puoi sostituire con un database)
 const animals = [
   {
@@ -123,8 +124,9 @@ function AdoptPage() {
               <Card.Body className="cardbody">
                 <Card.Title>{animal.name}</Card.Title>
                 <Card.Text>{animal.description}</Card.Text>
-                <Link to={`/adozione/${animal.id}`}>
-                  <Button className="button">Adotta</Button>
+                <Link to={"/donazione"}>
+                  <Button className="button">
+                    Adotta</Button>
                 </Link>
               </Card.Body>
             </Card>

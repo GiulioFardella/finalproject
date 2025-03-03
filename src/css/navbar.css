@@ -81,7 +81,7 @@
 /* Responsive: riduzione barra ricerca */
 @media screen and (max-width: 768px) {
   .search-bar {
-    max-width: 300px; /* Larghezza originale su tablet */
+    max-width: 3rem; /* Larghezza originale su tablet */
   }
 }
 
@@ -125,11 +125,11 @@
 }
 #habitat3 {
   color: rgb(0, 0, 0);
-  background-color: var(--green);
+  background-color: var(--orange);
 }
 #habitat4 {
   color: rgb(0, 0, 0);
-  background-color: var(--orange);
+  background-color: var(--blue);
 }
 #habitat5 {
   color: rgb(0, 0, 0);

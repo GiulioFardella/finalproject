@@ -1,0 +1,14 @@
+.card-body {
+    background-color: var(--orange);
+
+}
+
+.donation-button {
+    background-color: var(--purple);
+ 
+}
+.donation-global {
+    background-image: url(../assets/people/people4.jpg);
+    background-size: cover;
+    padding: 7.7rem;
+}

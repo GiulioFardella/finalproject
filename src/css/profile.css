@@ -1,6 +1,12 @@
 .profile-container {
-    background: linear-gradient(135deg, #004d00,var(--green))
+    padding: 3rem;
+    background-image: url(../assets/fern.jpg) ;
+    background-size: cover;
+    
 }
 .missiondiv {
     margin-bottom: 2rem;
+}
+.agrees {
+    color: white;
 }
