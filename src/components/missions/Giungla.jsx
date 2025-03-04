@@ -62,7 +62,7 @@ function Giungla() {
             <strong>2025: ISOLA DI PALAWAN - Filippine</strong> 
           </h4>
 
-          <p className="text-muted text-center mt-4 mission-paragraph">
+          <p className="text-light text-center mt-4 mission-paragraph">
             Partecipa alla nostra missione più importante per{" "}
             <span className="fw-bold">proteggere la foresta pluviale</span> e{" "}
             <span className="fw-bold">salvaguardare specie in pericolo:</span>
@@ -146,7 +146,7 @@ function Giungla() {
                       />
                     </Form.Group>
 
-                    <Button variant="success" type="submit" className="w-100">
+                    <Button  type="submit" className="w-100 richiestabutton">
                       📩 Invia Richiesta
                     </Button>
                   </Form>
@@ -187,8 +187,8 @@ function Giungla() {
                               </Form.Group>
 
                   <Button
-                    variant="danger"
-                    className="w-100"
+                    
+                    className="w-100 donabutton"
                     onClick={handleDonate}
                   >
                     💰 Dona Ora
@@ -198,7 +198,7 @@ function Giungla() {
             </Col>
           </Row>
 
-          <div className="mission-description mt-5">
+          <div className="mission-description mt-5 fw-5 fs-6 text-dark bg-light rounded-4 p-3">
             <h3>🌍 Missione di Volontariato: Protezione della Giungla 🌿</h3>
             
             <p>

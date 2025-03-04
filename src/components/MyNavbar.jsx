@@ -9,7 +9,7 @@ function MyNavbar() {
    
 
   return (
-    <Navbar expand="lg" id="generalnavbar">
+    <Navbar  id="generalnavbar "expand="lg">
       <Container className="custom-container">
         {/* Logo */}
         <Navbar.Brand href="/profilo" className="logo-container">
@@ -21,48 +21,49 @@ function MyNavbar() {
         {/* Navbar Items */}
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mx-auto d-flex align-items-center gap-5 fs-6">
-          <Link to={"/chisiamo"} href="#link" className="navlink">
-              Chi siamo
+          <Link to={"/chisiamo"} href="#link" className="navlink fw-bold">
+              CHI SIAMO
             </Link>
-            <Nav.Link href="#link" className="navlink">
-              Cosa facciamo
+            <Nav.Link href="#link" className="navlink fw-bold">
+              COSA FACCIAMO 
             </Nav.Link>
-            <Nav.Link href="#link" className="navlink">
-              Perché è importante?
+            <Nav.Link href="#link" className="navlink fw-bold">
+              PERCHE' E' IMPORTANTE?
             </Nav.Link>
-            <Nav.Link href="#link" className="navlink">
-              Interventi
+            <Nav.Link href="#link" className="navlink fw-bold">
+              INTERVENTI
             </Nav.Link>
 
             <NavDropdown
               title="PARTECIPA A UNA MISSIONE"
               id="basic-nav-dropdown"
-              className="custom-dropdown"
+              className="custom-dropdown "
             >
               <NavDropdown.Item href="#action/3.1" id="habitat1">
-              <Link to="/giungla"> Giungla </Link>
+              <Link to="/giungla"> Giungla 🌳 </Link>
                
               </NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2" id="habitat2">
-              <Link to="/savana"> Savana </Link>
+              <Link to="/savana"> Savana 🌾 </Link>
                 
               </NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3" id="habitat3">
               <Link to="/deserto">
-                Deserto
+                Deserto 🌵
               </Link>
               </NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3" id="habitat4">
-              <Link to="/mare"> Mare </Link>
+              <Link to="/mare"> Mare 🌊 </Link>
                 
               </NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3" id="habitat5">
-              <Link to="/montagna"> Montagna </Link>
+              <Link to="/montagna"> Montagna ⛰️ </Link>
                
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">
-                rinuncia ad una missione
+                
+                <Link to="/rinuncia"> Rinuncia ad una missione </Link>
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>

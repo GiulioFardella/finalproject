@@ -3,7 +3,7 @@
     background-size: cover;
     background-position: center;
     padding: 50px 20px;
-    border-radius: 15px;
+   
     color: white;
    
 }
@@ -16,6 +16,7 @@
 }
 .mission-paragraph {
     font-size: 1.5rem;
+   
 }
 
 
@@ -37,5 +38,12 @@
     margin-top: 2rem;
 }
 .mission-description {
+  
     list-style: none;
 }
+.donabutton {
+    background-color: var(--blue);
+}
+.richiestabutton {
+    background-color: var(--purple);
+}    

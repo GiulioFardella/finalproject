@@ -17,6 +17,7 @@ import Giungla from "./components/missions/Giungla";
 import Savana from "./components/missions/Savana";
 import Mare from "./components/missions/Mare";
 import Montagna from "./components/missions/Montagna";
+import Rinuncia from "./components/missions/Rinuncia";
 function App() {
   const [showModal, setShowModal] = useState(false);
 
@@ -36,6 +37,7 @@ function App() {
         <Route path="/montagna" element={<Montagna />} />
         <Route path="/giungla" element={<Giungla />} />
         <Route path="/savana" element={<Savana />} />
+        <Route path="/rinuncia" element={<Rinuncia />} />
         <Route path="/profilo" element={<Profile />} />
         <Route path="/adozione" element={<AdoptPage />} />
         <Route path="/registrazione" element={<RegisterPage />} />

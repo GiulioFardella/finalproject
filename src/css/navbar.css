@@ -1,12 +1,32 @@
-/* Navbar principale */
-#generalnavbar {
-  background-color: transparent; /* Sfondo navbar */
-  border-bottom: 2px solid #ddd; /* Leggera linea sotto */
-  padding: 10px 0;
+
+body {
+  margin: 0; /* Rimuove i margini predefiniti */
+  overflow-x: hidden; /* Impedisce lo scroll orizzontale */
 }
 
+
+
+.navlink a,
+.navlink a:visited,
+.custom-dropdown .dropdown-menu a,
+.custom-dropdown .dropdown-menu a:visited {
+  color: black !important; /* Cambia con il colore desiderato */
+  text-decoration: none; /* Evita sottolineature indesiderate */
+}/* Navbar principale */
+#generalnavbar {
+  background-color: transparent !important; /* Sfondo trasparente */
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+ 
+
+
 .navlink {
-  font-size: 1.3rem;
+  font-size: 1rem;
+  text-decoration: none;
 }
 
 /* Contenitore per la navbar */
@@ -101,15 +121,20 @@
 }
 
 #basic-nav-dropdown {
-  font-weight: 900;
   font-style: italic;
+  font-weight: 200;
 }
+
 
 /* //////////////////////////// HABITAT /////////////////////////////// */
 .custom-dropdown {
-  font-size: 1.3rem;
+  font-size: 1rem;
   margin-right: 1rem;
+
 }
+.custom-dropdown a {
+  text-decoration: none;
+} 
 
 .custom-dropdown .dropdown-menu {
   font-size: 1.3rem;
@@ -117,6 +142,7 @@
 
 #habitat1 {
   color: rgb(0, 0, 0);
+  
   background-color: var(--green);
 }
 #habitat2 {
@@ -146,4 +172,60 @@
   #generalnavbar .nav-link {
     padding: 0 10px; /* Riduci lo spazio tra voci */
   }
+}
+/* ////////////////////////////////////////*/ 
+
+/* Dropdown generale */
+.custom-dropdown .dropdown-menu {
+  border-radius: 12px; /* Bordi arrotondati */
+  border: none; /* Rimuove il bordo */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15); /* Ombra elegante */
+  padding: 10px 0; /* Spazio verticale */
+  transition: all 0.3s ease-in-out; /* Transizione fluida */
+}
+
+/* Effetto al passaggio del mouse */
+.custom-dropdown .dropdown-menu .dropdown-item {
+  font-weight: 300;
+  padding: 10px 15px; /* Più spazio ai testi */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Versioni scure per effetto hover */
+#habitat1:hover { background-color: #168677; } /* Green più scuro */
+#habitat2:hover { background-color: #e6e348; } /* Yellow più scuro */
+#habitat3:hover { background-color: #e37c5d; } /* Orange più scuro */
+#habitat4:hover { background-color: #4e72d3; } /* Blue più scuro */
+#habitat5:hover { background-color: #d11d69; } /* Purple più scuro */
+
+/* Effetto 3D al passaggio del mouse */
+.custom-dropdown .dropdown-menu .dropdown-item:hover {
+  transform: translateX(5px); /* Effetto movimento */
+  color: white !important; /* Testo bianco per contrasto */
+}
+
+/* Divider tra le voci */
+.custom-dropdown .dropdown-divider {
+  border-color: rgba(0, 0, 0, 0.1);
+  margin: 8px 0;
+}
+
+/* ////////////////////////////////////////*/ 
+
+/* Effetto di apertura del Dropdown */
+.custom-dropdown .dropdown-menu {
+  opacity: 0;  /* Inizialmente invisibile */
+  transform: translateY(-10px); /* Si sposta leggermente verso l'alto */
+  height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease, height 0.3s ease;
+  display: block; /* Mantiene la visibilità gestita da Bootstrap */
+}
+
+/* Quando il dropdown è aperto */
+.custom-dropdown.show .dropdown-menu {
+  opacity: 1;  /* Visibile */
+  transform: translateY(0); /* Torna alla posizione originale */
+  height: auto;
+  overflow: visible;
 }

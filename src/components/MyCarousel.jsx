@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom"; // Importa Link
 import Carousel from "react-bootstrap/Carousel";
 import { useState, useEffect } from "react";
-import AdoptPage from "./AdoptPage";
-// Importa le immagini
+
+// immagini
 import tigre4 from "../assets/animals/Mammiferi/tigre/tigre4.jpg";
 import shark3 from "../assets/animals/Pesci/squalo/shark3.jpg";
 import moray4 from "../assets/animals/Pesci/murena/moray4.jpg";

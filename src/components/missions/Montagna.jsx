@@ -133,7 +133,7 @@ function Montagna() {
                         onChange={handleChange}
                       />
                     </Form.Group>
-                    <Button variant="success" type="submit" className="w-100">
+                    <Button  type="submit" className="w-100 richiestabutton">
                       📩 Invia Richiesta
                     </Button>
                   </Form>
@@ -171,8 +171,8 @@ function Montagna() {
                     </Form.Select>
                   </Form.Group>
                   <Button
-                    variant="danger"
-                    className="w-100"
+                    
+                    className="w-100 donabutton"
                     onClick={handleDonate}
                   >
                     💰 Dona Ora

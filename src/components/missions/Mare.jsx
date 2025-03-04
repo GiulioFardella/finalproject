@@ -61,7 +61,7 @@ function Mare() {
             <strong>2025: Melbourne - Australia</strong>
           </h4>
 
-          <p className="text-muted text-center mt-4 mission-paragraph">
+          <p className="text-light text-center mt-4 mission-paragraph">
             Partecipa alla nostra missione per{" "}
             <span className="fw-bold">proteggere l'oceano</span> e{" "}
             <span className="fw-bold">salvaguardare specie in pericolo:</span>
@@ -145,7 +145,7 @@ function Mare() {
                       />
                     </Form.Group>
 
-                    <Button variant="success" type="submit" className="w-100">
+                    <Button  type="submit" className="w-100 richiestabutton">
                       📩 Invia Richiesta
                     </Button>
                   </Form>
@@ -186,8 +186,8 @@ function Mare() {
                   </Form.Group>
 
                   <Button
-                    variant="danger"
-                    className="w-100"
+                    
+                    className="w-100 donabutton"
                     onClick={handleDonate}
                   >
                     💰 Dona Ora
