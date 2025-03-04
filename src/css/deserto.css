@@ -1,0 +1,41 @@
+.deserto-container {
+    background-image: url(../assets/missioni/deserto.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 50px 20px;
+    border-radius: 15px;
+    color: white;
+    
+}
+
+.mission-title {
+    font-weight: bold;
+    font-size: 2.5rem;
+    
+    
+}
+.mission-paragraph {
+    font-size: 1.5rem;
+}
+
+
+.mission-list li {
+    list-style: none;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.mission-list li {
+
+    font-size: 1.6rem;
+
+}
+
+.form-section {
+    margin-top: 2rem;
+}
+.mission-description {
+}

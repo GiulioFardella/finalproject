@@ -40,19 +40,25 @@ function MyNavbar() {
               className="custom-dropdown"
             >
               <NavDropdown.Item href="#action/3.1" id="habitat1">
-                Giungla
+              <Link to="/giungla"> Giungla </Link>
+               
               </NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2" id="habitat2">
-                Savana
+              <Link to="/savana"> Savana </Link>
+                
               </NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3" id="habitat3">
+              <Link to="/deserto">
                 Deserto
+              </Link>
               </NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3" id="habitat4">
-                Mare
+              <Link to="/mare"> Mare </Link>
+                
               </NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3" id="habitat5">
-                Montagna
+              <Link to="/montagna"> Montagna </Link>
+               
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">

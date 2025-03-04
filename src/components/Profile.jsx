@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Container, Row, Col, Card, Button, Form } from "react-bootstrap";
 ///////////////////////////////////////
 import "../assets/fern.jpg"
-import "../css/profile.css"; // Importa il CSS
+import "../css/profile.css"; 
 
 function Profile() {
   // Stato per i dati utente
@@ -18,7 +18,7 @@ function Profile() {
     profilePic: "https://via.placeholder.com/150"
   });
 
-  // Stato per la modifica del profilo
+
   const [editing, setEditing] = useState(false);
   const [editedUser, setEditedUser] = useState({ ...user });
 

@@ -119,7 +119,7 @@ function AdoptPage() {
       <Row className="mt-4">
         {animals.map((animal) => (
           <Col key={animal.id} lg={3} md={4} xs={12} className="mb-4">
-            <Card>
+            <Card className="rounded-5">
               <Card.Img variant="top" src={animal.image} alt={animal.name} />
               <Card.Body className="cardbody">
                 <Card.Title>{animal.name}</Card.Title>

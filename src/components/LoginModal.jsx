@@ -7,9 +7,9 @@ function LoginModal({ show, handleClose }) {
 
   // Funzione per gestire il login
   const handleLogin = (event) => {
-    event.preventDefault(); // Evita il refresh della pagina
-    handleClose(); // Chiude il modale
-    navigate("/"); // Reindirizza alla home
+    event.preventDefault(); 
+    handleClose(); 
+    navigate("/"); 
   };
 
   return (
