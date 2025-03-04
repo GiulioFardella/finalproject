@@ -70,7 +70,7 @@ body {
   display: flex;
   justify-content: space-between; /* Spaziatura uniforme */
   width: 100%;
-  flex-wrap: nowrap;
+  
 }
 
 #generalnavbar .nav-link,
@@ -96,6 +96,11 @@ body {
 
 .searchfield {
   margin-left: 2px;
+}
+@media screen and (max-width:480px) {
+  .searchfield{
+    visibility: hidden;
+  }
 }
 
 /* Responsive: riduzione barra ricerca */

@@ -40,7 +40,7 @@ function Rinuncia() {
 
       {submitted && <Alert variant="success">Grazie per il tuo feedback! La tua rinuncia è stata registrata.</Alert>}
 
-      <Form onSubmit={handleSubmit} className="shadow p-4 bg-light rounded">
+      <Form onSubmit={handleSubmit} className="shadow p-4 bg-light rounded rinuncia-form">
         {/* Nome e Email */}
         <Form.Group className="mb-3">
           <Form.Label>Nome Completo</Form.Label>

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+
 import { Navbar, Nav, NavDropdown, Container, Form, InputGroup } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
@@ -71,16 +71,17 @@ function MyNavbar() {
 
         {/* Form di ricerca e profilo */}
         <Form className="d-flex search-bar">
-          <InputGroup>
+          <InputGroup className="searchfield">
             <Form.Control
-              className="searchfield"
+              
               placeholder="Cerca..."
               aria-label="Search"
             />
           </InputGroup>
         </Form>
         <Link to="/profilo" className="ms-4 profile-container2">
-          <img id="profilepic" src={orango2} alt="Profilo" />
+          <img id="profilepic"
+          className="searchfield" src={orango2} alt="Profilo" />
         </Link>
       </Container>
     </Navbar>
