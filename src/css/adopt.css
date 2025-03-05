@@ -33,12 +33,13 @@
 }
 
 /* 📋 Contenuto della card */
-.cardbody {
-    background: rgba(255, 255, 255, 0.9);
+.cardbody1 {
+    height: 200px;
     padding: 15px;
     text-align: center;
     border-bottom-left-radius: 18px;
     border-bottom-right-radius: 18px;
+    
 }
 
 /* 🟢 Pulsante "Adotta" */

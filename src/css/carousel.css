@@ -42,6 +42,12 @@
   padding: 10px 20px;
   color :white;
   border: solid 7px white;
+  
+}
+.adopt-link h3:hover{
+  transform: scale(1.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
 }
 
 @media screen and (max-width: 768px) {

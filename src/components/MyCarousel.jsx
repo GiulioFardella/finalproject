@@ -36,7 +36,7 @@ function MyCarousel() {
               src={image}
               alt={`Slide ${index}`}
               style={{
-                height: "60rem",
+                height: "70rem",
                 width: "100%",
                 objectFit: "cover",
               }}

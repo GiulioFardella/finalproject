@@ -109,32 +109,34 @@ const animals = [
 function AdoptPage() {
   return (
     <div id="generalAdoption">
-      
-    <Container >
-      <h1 className="text-center h1ado">Adotta un Animale</h1>
-      <p className="text-center h1ado">
-        Scegli un animale e aiutaci a proteggerlo con la tua donazione.
-      </p>
+      <Container>
+        <h1 className="text-center h1ado">Adotta un Animale</h1>
+        <p className="text-center h1ado">
+          Scegli un animale e aiutaci a proteggerlo con la tua donazione.
+        </p>
 
-      <Row className="mt-4">
-        {animals.map((animal) => (
-          <Col key={animal.id} lg={3} md={4} xs={12} className="mb-4">
-            <Card className="rounded-5">
-              <Card.Img variant="top" src={animal.image} alt={animal.name} />
-              <Card.Body className="cardbody">
-                <Card.Title className="animal-name">{animal.name}</Card.Title>
-                <Card.Text>{animal.description}</Card.Text>
-                <Link to={"/donazione"}>
-                  <Button className="button">
-                    Adotta</Button>
-                </Link>
-              </Card.Body>
-            </Card>
-          </Col>
-        ))}
-      </Row>
-    </Container>
-        </div>
+        <Row className="mt-4">
+          {animals.map((animal) => (
+            <Col key={animal.id} lg={3} md={4} xs={12} className="mb-4">
+              <Card className="animal-card">
+                <div className="image-container">
+                  <Card.Img variant="top" src={animal.image} alt={animal.name} className="card-img" />
+                </div>
+                <Card.Body className="cardbody1 d-flex flex-column justify-content-between">
+                  <div>
+                    <Card.Title className="animal-name">{animal.name}</Card.Title>
+                    <Card.Text className="card-text">{animal.description}</Card.Text>
+                  </div>
+                  <Link to={"/donazione"}>
+                    <Button className="button">Adotta</Button>
+                  </Link>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+      </Container>
+    </div>
   );
 }
 
