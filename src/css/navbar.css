@@ -1,35 +1,8 @@
-
 body {
-  margin: 0; /* Rimuove i margini predefiniti */
-  overflow-x: hidden; /* Impedisce lo scroll orizzontale */
+  margin: 0;
+  overflow-x: hidden;
 }
 
-
-
-.navlink a,
-.navlink a:visited,
-.custom-dropdown .dropdown-menu a,
-.custom-dropdown .dropdown-menu a:visited {
-  color: black !important; /* Cambia con il colore desiderato */
-  text-decoration: none; /* Evita sottolineature indesiderate */
-}/* Navbar principale */
-#generalnavbar {
-  background-color: transparent !important; /* Sfondo trasparente */
-  padding: 10px 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
- 
-
-
-.navlink {
-  font-size: 1rem;
-  text-decoration: none;
-}
-
-/* Contenitore per la navbar */
 .custom-container {
   width: 90%;
   max-width: 1800px;
@@ -38,91 +11,50 @@ body {
   align-items: center;
 }
 
+.custom-dropdown {
+  font-size: 1rem;
+  margin-right: 1rem;
+}
 
-/* Logo */
-.logo {
-  height: auto; /* Mantiene le proporzioni */
-  max-width: 250px; /* Dimensione massima */
+.custom-dropdown a {
+  text-decoration: none;
+}
+
+.custom-dropdown .dropdown-divider {
+  border-color: rgba(0, 0, 0, 0.1);
+  margin: 8px 0;
+}
+
+.custom-dropdown .dropdown-menu {
+  font-size: 1.3rem;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  padding: 10px 0;
   transition: all 0.3s ease-in-out;
+  opacity: 0;
+  transform: translateY(-10px);
+  height: 0;
+  overflow: hidden;
+  display: block;
 }
 
-/* Logo responsivo */
-@media screen and (max-width: 768px) {
-  .logo {
-    max-width: 140px; /* Più piccolo su tablet */
-  }
+.custom-dropdown .dropdown-menu .dropdown-item {
+  font-weight: 300;
+  padding: 10px 15px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-@media screen and (max-width: 480px) {
-  .logo {
-    max-width: 100px; /* Ancora più piccolo su mobile */
-  }
+.custom-dropdown .dropdown-menu .dropdown-item:hover {
+  transform: translateX(5px);
+  color: white !important;
 }
 
-/* Voci del menu */
-#generalnavbar .navbar-collapse {
-  display: flex;
-  justify-content: center; /* Centra le voci */
-  flex-grow: 1;
-}
-
-#generalnavbar .nav {
-  display: flex;
-  justify-content: space-between; /* Spaziatura uniforme */
-  width: 100%;
-  
-}
-
-#generalnavbar .nav-link,
-#generalnavbar .navbar-brand,
-#generalnavbar .nav-dropdown {
-  color: black !important;
-  font-weight: 500;
-  white-space: nowrap; /* Impedisce il ritorno a capo */
-  padding: 0 15px; /* Aggiunge spazio tra le voci */
-}
-
-/* Effetto hover sulle voci */
-#generalnavbar .nav-link:hover {
-  color: var(--purple) /* Colore blu al passaggio del mouse */
-}
-
-/* Barra di ricerca */
-.search-bar {
-  width: 100%;
-  max-width: 300px; /* Larghezza originale ripristinata */
-  transition: all 0.3s ease-in-out;
-}
-
-.searchfield {
-  margin-left: 2px;
-}
-@media screen and (max-width:480px) {
-  .searchfield{
-    visibility: hidden;
-  }
-}
-
-/* Responsive: riduzione barra ricerca */
-@media screen and (max-width: 768px) {
-  .search-bar {
-    max-width: 3rem; /* Larghezza originale su tablet */
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .search-bar {
-   display: none !important;
-   visibility: hidden; /* Larghezza originale su mobile */
-  }
-}
-
-/* Immagine profilo */
-#profilepic {
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  object-fit: cover;
+.custom-dropdown.show .dropdown-menu {
+  opacity: 1;
+  transform: translateY(0);
+  height: auto;
+  overflow: visible;
 }
 
 #basic-nav-dropdown {
@@ -130,107 +62,140 @@ body {
   font-weight: 200;
 }
 
-
-/* //////////////////////////// HABITAT /////////////////////////////// */
-.custom-dropdown {
-  font-size: 1rem;
-  margin-right: 1rem;
-
-}
-.custom-dropdown a {
-  text-decoration: none;
-} 
-
-.custom-dropdown .dropdown-menu {
-  font-size: 1.3rem;
+#generalnavbar {
+  background-color: white;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: solid, 2px, black;
 }
 
 #habitat1 {
   color: rgb(0, 0, 0);
-  
   background-color: var(--green);
 }
+
 #habitat2 {
   color: rgb(0, 0, 0);
   background-color: var(--yellow);
 }
+
 #habitat3 {
   color: rgb(0, 0, 0);
   background-color: var(--orange);
 }
+
 #habitat4 {
   color: rgb(0, 0, 0);
   background-color: var(--blue);
 }
+
 #habitat5 {
   color: rgb(0, 0, 0);
   background-color: var(--purple);
 }
 
-/* Responsive: gestione navbar su schermi piccoli */
+#profilepic {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+
+#generalnavbar .navbar-collapse {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+#generalnavbar .nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#generalnavbar .nav-link,
+#generalnavbar .navbar-brand,
+#generalnavbar .nav-dropdown {
+  color: black !important;
+  font-weight: 500;
+  white-space: nowrap;
+  padding: 0 15px;
+}
+
+#generalnavbar .nav-link:hover {
+  color: var(--purple);
+}
+
+#habitat1:hover { background-color: #168677; }
+#habitat2:hover { background-color: #e6e348; }
+#habitat3:hover { background-color: #e37c5d; }
+#habitat4:hover { background-color: #4e72d3; }
+#habitat5:hover { background-color: #d11d69; }
+
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+
+.navlink a,
+.navlink a:visited,
+.custom-dropdown .dropdown-menu a,
+.custom-dropdown .dropdown-menu a:visited {
+  color: black !important;
+  text-decoration: none;
+}
+
+.navlink {
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.search-bar {
+  width: 100%;
+  max-width: 300px;
+  transition: all 0.3s ease-in-out;
+}
+
+.searchfield {
+  margin-left: 2px;
+}
+
+@media screen and (max-width: 480px) {
+  .logo {
+    max-width: 100px;
+  }
+
+  .search-bar {
+    display: none !important;
+    visibility: hidden;
+  }
+
+  .searchfield {
+    visibility: hidden;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .logo {
+    max-width: 140px;
+  }
+
+  .search-bar {
+    max-width: 3rem;
+  }
+}
+
 @media screen and (max-width: 968px) {
   #generalnavbar .nav {
-    flex-wrap: wrap; /* Consenti il wrap se necessario su schermi piccoli */
-    justify-content: center; /* Centra su schermi piccoli */
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   #generalnavbar .nav-link {
-    padding: 0 10px; /* Riduci lo spazio tra voci */
+    padding: 0 10px;
   }
-}
-/* ////////////////////////////////////////*/ 
-
-/* Dropdown generale */
-.custom-dropdown .dropdown-menu {
-  border-radius: 12px; /* Bordi arrotondati */
-  border: none; /* Rimuove il bordo */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15); /* Ombra elegante */
-  padding: 10px 0; /* Spazio verticale */
-  transition: all 0.3s ease-in-out; /* Transizione fluida */
-}
-
-/* Effetto al passaggio del mouse */
-.custom-dropdown .dropdown-menu .dropdown-item {
-  font-weight: 300;
-  padding: 10px 15px; /* Più spazio ai testi */
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-/* Versioni scure per effetto hover */
-#habitat1:hover { background-color: #168677; } /* Green più scuro */
-#habitat2:hover { background-color: #e6e348; } /* Yellow più scuro */
-#habitat3:hover { background-color: #e37c5d; } /* Orange più scuro */
-#habitat4:hover { background-color: #4e72d3; } /* Blue più scuro */
-#habitat5:hover { background-color: #d11d69; } /* Purple più scuro */
-
-/* Effetto 3D al passaggio del mouse */
-.custom-dropdown .dropdown-menu .dropdown-item:hover {
-  transform: translateX(5px); /* Effetto movimento */
-  color: white !important; /* Testo bianco per contrasto */
-}
-
-/* Divider tra le voci */
-.custom-dropdown .dropdown-divider {
-  border-color: rgba(0, 0, 0, 0.1);
-  margin: 8px 0;
-}
-
-/* ////////////////////////////////////////*/ 
-
-/* Effetto di apertura del Dropdown */
-.custom-dropdown .dropdown-menu {
-  opacity: 0;  /* Inizialmente invisibile */
-  transform: translateY(-10px); /* Si sposta leggermente verso l'alto */
-  height: 0;
-  overflow: hidden;
-  transition: opacity 0.3s ease, transform 0.3s ease, height 0.3s ease;
-  display: block; /* Mantiene la visibilità gestita da Bootstrap */
-}
-
-/* Quando il dropdown è aperto */
-.custom-dropdown.show .dropdown-menu {
-  opacity: 1;  /* Visibile */
-  transform: translateY(0); /* Torna alla posizione originale */
-  height: auto;
-  overflow: visible;
 }

@@ -198,7 +198,7 @@ function Giungla() {
             </Col>
           </Row>
 
-          <div className="mission-description mt-5 fw-5 fs-6 text-dark bg-light rounded-4 p-3">
+          <div className="mt-5 fw-5 fs-6 text-dark bg-light rounded-4 p-3" id="mission-description">
             <h3>🌍 Missione di Volontariato: Protezione della Giungla 🌿</h3>
             
             <p>

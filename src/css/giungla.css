@@ -1,54 +1,46 @@
 .giungla-container {
-    background-image: url(../assets/jungle.jpg);
-    background-size: cover;
-    background-position: center;
-    padding: 50px 20px;
-    color: white;
-    
-   
-   
+  background-image: url(../assets/jungle.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 50px 20px;
+  color: white;
 }
 
 .mission-title {
-    font-weight: bold;
-    font-size: 2.5rem;
-    
-
+  font-weight: bold;
+  font-size: 2.5rem;
+ 
 }
 .mission-paragraph {
-    font-size: 1.5rem;
-   
+  font-size: 1.5rem;
 }
 .first-content {
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); 
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
 }
 
 .mission-list li {
-    list-style: none;
-    font-size: 1.6rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: 10px 0;
-    
+  list-style: none;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
 }
 
 .mission-list li {
-
-    font-size: 1.6rem;
+  font-size: 1.6rem;
 }
 
 .form-section {
-    margin-top: 2rem;
+  margin-top: 2rem;
 }
-.mission-description {
-   
-    
-    list-style: none;
+#mission-description {
+  list-style: none;
+  text-shadow: none;
 }
 .donabutton {
-    background-color: var(--blue);
+  background-color: var(--blue);
 }
 .richiestabutton {
-    background-color: var(--purple);
-}    
+  background-color: var(--purple);
+}
