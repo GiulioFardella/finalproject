@@ -38,6 +38,8 @@
 }
 .mission-description {
     list-style: none;
+    font-size: 1.2rem;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
 }
 .donabutton {
     background-color: var(--blue);

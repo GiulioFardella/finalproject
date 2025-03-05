@@ -1,6 +1,7 @@
 /* 🌿 Stili generali */
 #generalAdoption {
-    background: linear-gradient(135deg, #92db92,var(--green)); /* Verde più profondo */
+    background-image: url(../assets/savana2.jpg); 
+    background-size: cover;/* Verde più profondo */
     padding: 50px 0;
 }
 
@@ -52,6 +53,7 @@
     transition: all 0.3s ease-in-out;
     display: block;
     margin: 0 auto;
+    text-decoration: none;
 }
 
 .button:hover {
@@ -74,4 +76,10 @@
         font-size: 1rem;
         padding: 8px 16px;
     }
+}
+.animal-name {
+    color: white; 
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); 
+    
+    font-size: 1.3rem; 
 }

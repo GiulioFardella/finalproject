@@ -3,7 +3,9 @@ import "../css/donation.css";
 import "../assets/people/people4.jpg";
 import { Form, Button, Card, InputGroup } from "react-bootstrap";
 
+
 const Donation = () => {
+  
   return (
     <div className="donation-global">
       <Card

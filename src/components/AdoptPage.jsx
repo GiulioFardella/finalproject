@@ -122,7 +122,7 @@ function AdoptPage() {
             <Card className="rounded-5">
               <Card.Img variant="top" src={animal.image} alt={animal.name} />
               <Card.Body className="cardbody">
-                <Card.Title>{animal.name}</Card.Title>
+                <Card.Title className="animal-name">{animal.name}</Card.Title>
                 <Card.Text>{animal.description}</Card.Text>
                 <Link to={"/donazione"}>
                   <Button className="button">

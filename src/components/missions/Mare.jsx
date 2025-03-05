@@ -145,7 +145,7 @@ function Mare() {
                       />
                     </Form.Group>
 
-                    <Button  type="submit" className="w-100 richiestabutton">
+                    <Button type="submit" className="w-100 richiestabutton">
                       📩 Invia Richiesta
                     </Button>
                   </Form>
@@ -185,11 +185,7 @@ function Mare() {
                     </Form.Select>
                   </Form.Group>
 
-                  <Button
-                    
-                    className="w-100 donabutton"
-                    onClick={handleDonate}
-                  >
+                  <Button className="w-100 donabutton" onClick={handleDonate}>
                     💰 Dona Ora
                   </Button>
                 </Card.Body>
@@ -197,7 +193,7 @@ function Mare() {
             </Col>
           </Row>
 
-          <div className="mission-description mt-5"></div>
+          <div className="mission-description mt-5">
           <h3>
             🌍 Missione di Volontariato: Protezione delle Specie Marine 🌊
           </h3>
@@ -251,6 +247,7 @@ function Mare() {
             🔗 Unisciti a noi e aiuta a proteggere il mare! 🐬🌊
           </p>
         </div>
+    </div>
       </Container>
     </div>
   );

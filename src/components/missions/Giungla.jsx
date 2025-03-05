@@ -52,7 +52,7 @@ function Giungla() {
       <Container className="mt-5">
         
         {/* 🟢 Sezione Missione */}
-        <div className="text-center">
+        <div className="text-center first-content">
           <h2 className="text-center mission-title">
             🌿 Unisciti a tante persone per proteggere la{" "}
             <span>Giungla delle Filippine</span>

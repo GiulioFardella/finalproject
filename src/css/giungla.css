@@ -3,8 +3,9 @@
     background-size: cover;
     background-position: center;
     padding: 50px 20px;
-   
     color: white;
+    
+   
    
 }
 
@@ -18,7 +19,9 @@
     font-size: 1.5rem;
    
 }
-
+.first-content {
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); 
+}
 
 .mission-list li {
     list-style: none;
@@ -27,6 +30,7 @@
     align-items: center;
     gap: 10px;
     margin: 10px 0;
+    
 }
 
 .mission-list li {
@@ -38,7 +42,8 @@
     margin-top: 2rem;
 }
 .mission-description {
-  
+   
+    
     list-style: none;
 }
 .donabutton {
