@@ -22,8 +22,12 @@ function RegisterPage() {
   };
 
   return (
-    <div className="global-register">
-    <Container className="container-form">
+    <div className="global-register" style={{
+      height: "80rem",
+      width: "100%",
+      
+    }}>
+    <Container className="container-form ">
     <Form noValidate validated={validated} onSubmit={handleSubmit} class="register-form">
       <Row className="mb-3">
         <Form.Group as={Col} md="4" controlId="validationCustom01">
