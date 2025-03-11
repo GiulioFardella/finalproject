@@ -33,7 +33,7 @@ const animals = [
     id: 5,
     name: "Razza d'Acqua Dolce Gigante",
     image: require("../assets/animals/Pesci/razza/stingray1.jpg"),
-    description: "Una delle più grandi razze d'acqua dolce al mondo, capace di raggiungere dimensioni impressionanti.",
+    description: "Una delle più grandi razze d'acqua dolce al mondo, capace di raggiungere grandi dimensioni ",
   },
   {
     id: 6,
