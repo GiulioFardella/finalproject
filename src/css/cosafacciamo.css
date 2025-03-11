@@ -1,0 +1,11 @@
+.cosafacciamobody{
+    background-image: url(../assets/animals/Mammiferi/armadillo/armadillo1.jpg);
+    background-size: contain;
+    font-size: 2rem;
+    color: white;
+    font-weight: 800;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

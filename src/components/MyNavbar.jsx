@@ -27,15 +27,15 @@ function MyNavbar() {
             <Link to={"/chisiamo"} href="#link" className="navlink fw-bold">
               CHI SIAMO
             </Link>
-            <Nav.Link href="#link" className="navlink fw-bold">
+           <Link to={"/cosafacciamo"} href="#link" className="navlink fw-bold">
               COSA FACCIAMO
-            </Nav.Link>
-            <Nav.Link href="#link" className="navlink fw-bold">
+            </Link>
+            <Link to={"/perche"} href="#link" className="navlink fw-bold">
               PERCHE' E' IMPORTANTE?
-            </Nav.Link>
-            <Nav.Link href="#link" className="navlink fw-bold">
+            </Link>
+            <Link to={"/interventi"} href="#link" className="navlink fw-bold">
               INTERVENTI
-            </Nav.Link>
+            </Link>
 
             <NavDropdown
               title="PARTECIPA A UNA MISSIONE"

@@ -18,6 +18,9 @@ import Savana from "./components/missions/Savana";
 import Mare from "./components/missions/Mare";
 import Montagna from "./components/missions/Montagna";
 import Rinuncia from "./components/missions/Rinuncia";
+import Cosafacciamo from "./components/navbarcomponents/Cosafacciamo";
+import Perche from "./components/navbarcomponents/Perche";
+import Interventi from "./components/navbarcomponents/Interventi";
 function App() {
   const [showModal, setShowModal] = useState(false);
 
@@ -30,6 +33,9 @@ function App() {
       <MyNavbar />
       <LoginModal show={showModal} handleClose={() => setShowModal(false)} />
       <Routes>
+        <Route path="/interventi" element={<Interventi/>}/>
+        <Route path="/perche" element={<Perche/>}/>
+        <Route path="/cosafacciamo" element={<Cosafacciamo/>}/>
         <Route path="/chisiamo" element={<Chisiamo />} />
         <Route path="/" element={<MyCarousel />} />
         <Route path="/deserto" element={<Deserto />} />
