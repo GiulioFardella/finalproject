@@ -6,7 +6,7 @@ function Chisiamo() {
     <div className="chisiamobody">
       <Container className="containerbody vh-100 d-flex align-items-center justify-content-center">
         <div className="bodytext p-4">
-          <h1 className="fw-5 text-center">ZooVersee, la nostra storia</h1>
+          <h1 className="fw-5 fs-1 text-center mb-5">ZooVersee, la nostra storia</h1>
           
           <p className="lead text-center fs-3">
             Nel cuore dell’Amazzonia, durante una missione di salvataggio nel 2008, un gruppo di biologi, 

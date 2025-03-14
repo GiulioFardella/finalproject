@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Container, Form, Button, Alert } from "react-bootstrap";
 import "../../css/rinuncia.css";
-
+import armadillotriste from "../../assets/armadillotriste.jpg"
 function Rinuncia() {
   const [formData, setFormData] = useState({
     name: "",
@@ -34,15 +34,24 @@ function Rinuncia() {
   };
 
   return (
-    <Container className="rinuncia-container mt-5">
-      <h3 className="text-danger text-center">😔 Ci dispiace che tu debba rinunciare alla missione</h3>
-      <p className="text-muted text-center">Compila il modulo per aiutarci a migliorare le nostre missioni future.</p>
+    <div className="sfondorinuncia">
+    <Container className="rinuncia-container p-5">
+    <div className="d-flex align-items-center justify-content-center mb-5">
+          <h3 className="text-danger text-center me-3"> Ci dispiace che tu debba rinunciare alla missione</h3>
+          <img 
+            src={armadillotriste} 
+            alt="Armadillo triste" 
+            className="img-fluid" 
+            style={{ width: "90px", height: "90px" }} 
+          />
+        </div>
+      <p className="text-muted text-center mb-5 fs-5">Compila il modulo per aiutarci a migliorare le nostre missioni future.</p>
 
       {submitted && <Alert variant="success">Grazie per il tuo feedback! La tua rinuncia è stata registrata.</Alert>}
 
-      <Form onSubmit={handleSubmit} className="shadow p-4 bg-light rounded rinuncia-form">
+      <Form onSubmit={handleSubmit} className="shadow p-5 bg-light rounded rinuncia-form">
         {/* Nome e Email */}
-        <Form.Group className="mb-3">
+        <Form.Group className="mb-5">
           <Form.Label>Nome Completo</Form.Label>
           <Form.Control 
             type="text" 
@@ -50,10 +59,11 @@ function Rinuncia() {
             value={formData.name} 
             onChange={handleChange} 
             required 
+            
           />
         </Form.Group>
 
-        <Form.Group className="mb-3">
+        <Form.Group className="mb-5">
           <Form.Label>Email</Form.Label>
           <Form.Control 
             type="email" 
@@ -65,7 +75,7 @@ function Rinuncia() {
         </Form.Group>
 
         {/* Missione di riferimento */}
-        <Form.Group className="mb-3">
+        <Form.Group className="mb-5">
           <Form.Label>Missione a cui stavi partecipando</Form.Label>
           <Form.Control 
             type="text" 
@@ -77,7 +87,7 @@ function Rinuncia() {
         </Form.Group>
 
         {/* Motivo della rinuncia */}
-        <Form.Group className="mb-3">
+        <Form.Group className="mb-5">
           <Form.Label>Motivo della rinuncia</Form.Label>
           <Form.Select 
             name="reason" 
@@ -95,22 +105,23 @@ function Rinuncia() {
         </Form.Group>
 
         {/* Dettagli aggiuntivi */}
-        <Form.Group className="mb-3">
+        <Form.Group className="mb-5">
           <Form.Label>Altri dettagli (opzionale)</Form.Label>
           <Form.Control 
             as="textarea" 
-            rows={3} 
+            rows={5} 
             name="details" 
             value={formData.details} 
             onChange={handleChange} 
           />
         </Form.Group>
 
-        <Button variant="danger" type="submit" className="w-100">
+        <Button variant="danger" type="submit" className="w-100 mb-5 mt-5">
           📩 Invia Rinuncia
         </Button>
       </Form>
     </Container>
+    </div>
   );
 }
 
