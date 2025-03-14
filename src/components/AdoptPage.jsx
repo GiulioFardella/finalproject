@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Card, Button, Container, Row, Col } from "react-bootstrap";
 import "../css/adopt.css";
 import "../assets/fern.jpg";
-import Donation from "./Donation";
+
 // Dati degli animali (simulazione, puoi sostituire con un database)
 const animals = [
   {

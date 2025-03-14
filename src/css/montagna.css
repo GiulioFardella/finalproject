@@ -1,5 +1,6 @@
 .montagna-container {
     background-image: url(../assets/montagna.jpg);
+    background-attachment: fixed;
     background-size: cover;
     background-position: center;
     padding: 50px 20px;
