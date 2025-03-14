@@ -1,11 +1,27 @@
+@media (max-width: 768px) {
+    .chisiamobody {
+        font-size: 1.2rem;
+    }
+}
+.containerbody {
+    min-height: 100vh;
+    height: auto;
+}
+@media (max-width: 576px) {
+    .bodytext {
+        padding: 1rem;
+    }
+}
 .chisiamobody {
     background-image: url(../assets/animals/Rettili/tartaruga/torto2.jpg);
     background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     font-size: 2rem;
     color: white;
-    font-weight: 800;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+}
+@media (max-width: 576px) {
+    .bodytext {
+        text-align: start;
+    }
 }

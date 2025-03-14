@@ -1,11 +1,23 @@
-.cosafacciamobody{
-    background-image: url(../assets/animals/Mammiferi/armadillo/armadillo1.jpg);
-    background-size: contain;
-    font-size: 2rem;
-    color: white;
-    font-weight: 800;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+@media (max-width: 768px) {
+    .cosafacciamobody {
+        font-size: 1.2rem;
+    }
 }
+.containerbody {
+    min-height: 100vh;
+    height: auto;
+}
+.cosafacciamobody {
+    background-image: url(../assets/animals/Mammiferi/armadillo/armadillo1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    font-size: 1.7rem;
+}
+@media (max-width: 576px) {
+    .cosafacciamobody {
+        padding: 1rem;
+    }
+}
+ 

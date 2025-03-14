@@ -3,8 +3,8 @@ import "../../css/interventi.css";
 
 function Interventi() {
   return (
-    <div className="interventibody p-5">
-      <Container className="containerbody vh-100 d-flex align-items-center justify-content-center">
+        <div className="interventibody p-5">
+    <Container className="containerbody vh-100 d-flex align-items-center justify-content-center">
         <div className="bodytext p-4">
           <h1 className="fw-5 text-center">Interventi sul Campo per la Tutela degli Animali</h1>
           

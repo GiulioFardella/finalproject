@@ -8,7 +8,7 @@ function Chisiamo() {
         <div className="bodytext p-4">
           <h1 className="fw-5 text-center">ZooVersee, la nostra storia</h1>
           
-          <p className="lead text-center">
+          <p className="lead text-center fs-3">
             Nel cuore dell’Amazzonia, durante una missione di salvataggio nel 2008, un gruppo di biologi, 
             veterinari e ambientalisti si trovò faccia a faccia con una realtà sconvolgente: intere specie sull'orlo
             dell'estinzione, minacciate dal disboscamento, dal bracconaggio e dai cambiamenti climatici. 

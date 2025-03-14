@@ -21,6 +21,7 @@ import Rinuncia from "./components/missions/Rinuncia";
 import Cosafacciamo from "./components/navbarcomponents/Cosafacciamo";
 import Perche from "./components/navbarcomponents/Perche";
 import Interventi from "./components/navbarcomponents/Interventi";
+
 function App() {
   const [showModal, setShowModal] = useState(false);
 
@@ -31,6 +32,7 @@ function App() {
   return (
     <BrowserRouter>
       <MyNavbar />
+      
       <LoginModal show={showModal} handleClose={() => setShowModal(false)} />
       <Routes>
         <Route path="/interventi" element={<Interventi/>}/>

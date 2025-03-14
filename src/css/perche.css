@@ -1,11 +1,22 @@
+@media (max-width: 768px) {
+    .perchebody {
+        font-size: 1.5rem;
+    }
+}
+.containerbody {
+    min-height: 100vh;
+    height: auto;
+}
+@media (max-width: 576px) {
+    .bodytext {
+        padding: 1rem;
+    }
+}
 .perchebody {
     background-image: url(../assets/animals/Pesci/napoleone/napoleon2.jpg);
     background-size: cover;
-    font-size: 3rem;
+    background-position: center;
+    background-attachment: fixed;
     color: white;
-    font-weight: 800;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-size: 1.7rem;
 }

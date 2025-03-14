@@ -1,11 +1,20 @@
 .interventibody {
     background-image: url(../assets/animals/Rettili/axolot/axolot2.jpg);
     background-size: cover;
-    font-size: 2rem;
+    background-position: center;
+    background-attachment: fixed;
     color: white;
-    font-weight: 800;
+    font-size: 1.7rem;
+}
+.containerbody {
     min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: auto;
+}
+@media (max-width: 768px) {
+    .interventibody {
+        font-size: 1rem;
+    }
+    .bodytext {
+        padding: 2rem;
+    }
 }
