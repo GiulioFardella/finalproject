@@ -1,15 +1,41 @@
 import { Modal, Button, Form } from "react-bootstrap";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/login.css";
 
 function LoginModal({ show, handleClose }) {
   const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   // Funzione per gestire il login
-  const handleLogin = (event) => {
+  const handleLogin = async (event) => {
     event.preventDefault();
-    handleClose();
-    navigate("/");
+    setLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch("http://localhost:8080/api/utenti/login", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("Errore durante il login. Riprova.");
+      }
+
+      // Se il login ha successo, chiudi il modale e naviga alla home
+      handleClose();
+      navigate("/");
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -17,35 +43,45 @@ function LoginModal({ show, handleClose }) {
       show={show}
       onHide={handleClose}
       centered
-      className="modal-container "
+      className="modal-container"
     >
       <div className="modal-content">
         <Modal.Header closeButton className="generalModal">
           <Modal.Title className="modaltitle">Accedi o Registrati</Modal.Title>
         </Modal.Header>
-        <Modal.Body className="generalModal ">
+        <Modal.Body className="generalModal">
           <Form onSubmit={handleLogin}>
-            {" "}
-            {/* Il form usa handleLogin */}
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Email</Form.Label>
               <Form.Control
                 type="email"
                 placeholder="Inserisci email"
                 required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" required />
+              <Form.Control
+                type="password"
+                placeholder="Password"
+                required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
             </Form.Group>
+
+            {/* Messaggio di errore in caso di problemi */}
+            {error && (
+              <p style={{ color: "red", textAlign: "center" }}>{error}</p>
+            )}
+
             <div className="loginButtons d-flex justify-content-around">
-              {/* Accedi: il submit chiama handleLogin */}
-              <Button type="submit" className="button">
-                Accedi
+              <Button type="submit" className="button" disabled={loading}>
+                {loading ? "Accedendo..." : "Accedi"}
               </Button>
 
-              {/* Registrati: chiude il modale e naviga */}
               <Button
                 type="button"
                 className="button"

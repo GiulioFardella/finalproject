@@ -1,113 +1,192 @@
-import { Container } from 'react-bootstrap';
-import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
-import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
-import Row from 'react-bootstrap/Row';
+import { Container } from "react-bootstrap";
+import { useState } from "react";
+import Button from "react-bootstrap/Button";
+import Col from "react-bootstrap/Col";
+import Form from "react-bootstrap/Form";
+import InputGroup from "react-bootstrap/InputGroup";
+import Row from "react-bootstrap/Row";
 /////////////////////////
-import "../assets/fern1.jpg"
-import "../css/register.css"
+import "../assets/fern1.jpg";
+import "../css/register.css";
+
 function RegisterPage() {
   const [validated, setValidated] = useState(false);
+  const [formData, setFormData] = useState({
+    firstname: "",
+    lastname: "",
+    username: "",
+    city: "",
+    state: "",
+    email: "",
+    password: "",
+  });
 
-  const handleSubmit = (event) => {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState("");
+
+  // Funzione per aggiornare i dati nel form
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // Funzione per inviare i dati al backend
+  const handleRegister = async (event) => {
+    event.preventDefault();
+    setValidated(true);
+
     const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
+    if (!form.checkValidity()) {
       event.stopPropagation();
+      return;
     }
 
-    setValidated(true);
+    setLoading(true);
+    setError(null);
+    setSuccess("");
+
+    try {
+      const response = await fetch(
+        "http://localhost:8080/api/utenti/inserimento",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Registrazione fallita. Riprova.");
+      }
+
+      setSuccess("Registrazione avvenuta con successo!");
+      setFormData({
+        firstname: "",
+        lastname: "",
+        username: "",
+        city: "",
+        state: "",
+        email: "",
+        password: "",
+      });
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <div className="global-register" style={{
-      height: "80rem",
-      width: "100%",
-      
-    }}>
-    <Container className="container-form ">
-    <Form noValidate validated={validated} onSubmit={handleSubmit} class="register-form">
-      <Row className="mb-3">
-        <Form.Group as={Col} md="4" controlId="validationCustom01">
-          <Form.Label>First name</Form.Label>
-          <Form.Control
-            required
-            type="text"
-            placeholder="First name"
-            defaultValue="Mark"
-            />
-          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-        </Form.Group>
-        <Form.Group as={Col} md="4" controlId="validationCustom02">
-          <Form.Label>Last name</Form.Label>
-          <Form.Control
-            required
-            type="text"
-            placeholder="Last name"
-            defaultValue="Otto"
-            />
-          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-        </Form.Group>
-        <Form.Group as={Col} md="4" controlId="validationCustomUsername">
-            
-          <Form.Label>Username</Form.Label>
-          <InputGroup hasValidation>
-            <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
+    <div className="global-register" style={{ height: "80rem", width: "100%" }}>
+      <Container className="container-form">
+        <Form noValidate validated={validated} onSubmit={handleRegister}>
+          <Row className="mb-3">
+            <Form.Group as={Col} md="4">
+              <Form.Label>First name</Form.Label>
+              <Form.Control
+                required
+                type="text"
+                placeholder="First name"
+                name="firstname"
+                value={formData.firstname}
+                onChange={handleChange}
+              />
+            </Form.Group>
+            <Form.Group as={Col} md="4">
+              <Form.Label>Last name</Form.Label>
+              <Form.Control
+                required
+                type="text"
+                placeholder="Last name"
+                name="lastname"
+                value={formData.lastname}
+                onChange={handleChange}
+              />
+            </Form.Group>
+            <Form.Group as={Col} md="4">
+              <Form.Label>Username</Form.Label>
+              <InputGroup hasValidation>
+                <InputGroup.Text>@</InputGroup.Text>
+                <Form.Control
+                  required
+                  type="text"
+                  placeholder="Username"
+                  name="username"
+                  value={formData.username}
+                  onChange={handleChange}
+                />
+              </InputGroup>
+            </Form.Group>
+          </Row>
+
+          <Row className="mb-3">
+            <Form.Group as={Col} md="6">
+              <Form.Label>City</Form.Label>
+              <Form.Control
+                required
+                type="text"
+                placeholder="City"
+                name="city"
+                value={formData.city}
+                onChange={handleChange}
+              />
+            </Form.Group>
+            <Form.Group as={Col} md="6">
+              <Form.Label>State</Form.Label>
+              <Form.Control
+                required
+                type="text"
+                placeholder="State"
+                name="state"
+                value={formData.state}
+                onChange={handleChange}
+              />
+            </Form.Group>
+          </Row>
+
+          <Form.Group className="mb-3">
+            <Form.Label>Email</Form.Label>
             <Form.Control
-              type="text"
-              placeholder="Username"
-              aria-describedby="inputGroupPrepend"
               required
+              type="email"
+              placeholder="Your email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
             />
-            <Form.Control.Feedback type="invalid">
-              Please choose a username.
-            </Form.Control.Feedback>
-          </InputGroup>
-        </Form.Group>
-      </Row>
-      <Row className="mb-3">
-        <Form.Group as={Col} md="6" controlId="validationCustom03">
-          <Form.Label>City</Form.Label>
-          <Form.Control type="text" placeholder="City" required />
-          <Form.Control.Feedback type="invalid">
-            Please provide a valid city.
-          </Form.Control.Feedback>
-        </Form.Group>
-        <Form.Group as={Col} md="3" controlId="validationCustom04">
-          <Form.Label>State</Form.Label>
-          <Form.Control type="text" placeholder="State" required />
-          <Form.Control.Feedback type="invalid">
-            Please provide a valid state.
-          </Form.Control.Feedback>
-        </Form.Group>
-        <Form.Group as={Col} md="3" controlId="validationCustom05">
-          <Form.Label>Zip</Form.Label>
-          <Form.Control type="text" placeholder="Zip" required />
-          <Form.Control.Feedback type="invalid">
-            Please provide a valid zip.
-          </Form.Control.Feedback>
-        </Form.Group>
-      </Row>
-        <Form.Label>Email</Form.Label>
-        <Form.Control
-            required
-            type="text"
-            placeholder="your e-mail"
-            defaultValue="Mario.Rossi@gmail.it"
+          </Form.Group>
+
+          <Form.Group className="mb-3">
+            <Form.Label>Password</Form.Label>
+            <Form.Control
+              required
+              type="password"
+              placeholder="Password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
             />
-      <Form.Group className="mb-3">
-        <Form.Check className='agrees'
-          required
-          label="Agree to terms and conditions"
-          feedback="You must agree before submitting."
-          feedbackType="invalid"
-        />
-        <Button type="submit">Submit form</Button>
-      </Form.Group>
-    </Form>
-    </Container>
+          </Form.Group>
+
+          <Form.Group className="mb-3">
+            <Form.Check
+              className="agrees"
+              required
+              label="Agree to terms and conditions"
+              feedback="You must agree before submitting."
+            />
+          </Form.Group>
+
+          <Button type="submit" disabled={loading}>
+            {loading ? "Registrando..." : "Submit form"}
+          </Button>
+
+          {error && <p style={{ color: "red" }}>Errore: {error}</p>}
+          {success && <p style={{ color: "green" }}>{success}</p>}
+        </Form>
+      </Container>
     </div>
   );
 }

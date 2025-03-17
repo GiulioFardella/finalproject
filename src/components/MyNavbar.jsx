@@ -9,13 +9,14 @@ import {
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import orango2 from "../assets/animals/Mammiferi/orango/orango2.jpg";
+
 import "../css/navbar.css";
 function MyNavbar() {
   return (
     <Navbar id="generalnavbar" expand="lg">
       <Container className="custom-container">
         {/* Logo */}
-        <Navbar.Brand href="/profilo" className="logo-container">
+        <Navbar.Brand href="/" className="logo-container">
           <img src={logo} alt="logo" className="logo" />
         </Navbar.Brand>
         {/* Toggle per il menu mobile */}
@@ -24,16 +25,16 @@ function MyNavbar() {
         {/* Navbar Items */}
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mx-auto d-flex align-items-center gap-5 fs-6">
-            <Link to={"/chisiamo"} href="#link" className="navlink fw-bold">
+            <Link to={"/chisiamo"} href="#link" className="navlink fw-bold navlink1">
               CHI SIAMO
             </Link>
-           <Link to={"/cosafacciamo"} href="#link" className="navlink fw-bold">
+           <Link to={"/cosafacciamo"} href="#link" className="navlink fw-bold navlink2">
               COSA FACCIAMO
             </Link>
-            <Link to={"/perche"} href="#link" className="navlink fw-bold">
+            <Link to={"/perche"} href="#link" className="navlink fw-bold navlink3">
               PERCHE' E' IMPORTANTE?
             </Link>
-            <Link to={"/interventi"} href="#link" className="navlink fw-bold">
+            <Link to={"/interventi"} href="#link" className="navlink fw-bold navlink4">
               INTERVENTI
             </Link>
 

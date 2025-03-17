@@ -1,15 +1,31 @@
+.donation-global {
+    background-image: url(../assets/people/people4.jpg);
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem; 
+}
+
 .card-body {
     background-color: var(--orange);
-
+    
+    border-radius: 10px;
 }
 
 .donation-button {
     background-color: var(--purple);
- 
 }
-.donation-global {
-    background-image: url(../assets/people/people4.jpg);
-    background-size: cover;
-    padding: 17.7rem;
-    height: 70rem;
+
+
+@media (max-width: 768px) {
+    .donation-global {
+        padding: 1rem;
+    }
+
+    .card-body {
+        margin-top: 1rem;
+    }
 }
