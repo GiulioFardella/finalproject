@@ -45,3 +45,9 @@
 .richiestabutton {
   background-color: var(--purple);
 }
+.filippine-image {
+  width: 350px;
+  border-radius: 15px;
+  display: block;
+  margin-top: 20px;
+}

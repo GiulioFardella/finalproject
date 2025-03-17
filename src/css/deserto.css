@@ -35,3 +35,9 @@
 .mission-description {
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); 
 }
+.emirati-image {
+  width: 350px;
+  border-radius: 15px;
+  display: block;
+  margin-top: 20px;
+}

@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import "../../css/mare.css";
+import australia from "../../assets/mappe/australia.jpeg"
 import {
   Container,
   Row,
@@ -190,6 +191,7 @@ function Mare() {
                   </Button>
                 </Card.Body>
               </Card>
+              <img src={australia} className="australia-image"/>
             </Col>
           </Row>
 

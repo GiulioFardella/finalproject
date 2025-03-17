@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import "../../css/giungla.css";
+import filippine from "../../assets/mappe/filippine.jpeg"
 import {
   Container,
   Row,
@@ -195,6 +196,7 @@ function Giungla() {
                   </Button>
                 </Card.Body>
               </Card>
+              <img src={filippine} className="filippine-image"/>
             </Col>
           </Row>
 

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../../css/montagna.css";
+import ruanda from "../../assets/mappe/ruanda.jpeg"
 import {
   Container,
   Row,
@@ -179,6 +180,7 @@ function Montagna() {
                   </Button>
                 </Card.Body>
               </Card>
+              <img src={ruanda} className="ruanda-image"/>
             </Col>
           </Row>
         </div>

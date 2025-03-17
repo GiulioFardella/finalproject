@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../../assets/savana.jpg";
 import "../../css/savana.css";
+import serengeti from "../../assets/mappe/serengeti.jpeg"
 import {
   Container,
   Row,
@@ -189,6 +190,8 @@ function Savana() {
                   </Button>
                 </Card.Body>
               </Card>
+              <img src={serengeti} alt="Serengeti" className="serengeti-image" />
+
             </Col>
           </Row>
 

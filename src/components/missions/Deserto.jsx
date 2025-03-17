@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../../assets/missioni/deserto.jpg";
 import "../../css/deserto.css";
+import emirati from "../../assets/mappe/emirati.jpeg"
 import {
   Container,
   Row,
@@ -190,6 +191,7 @@ function Deserto() {
                   </Button>
                 </Card.Body>
               </Card>
+              <img src={emirati} className="emirati-image"/>
             </Col>
           </Row>
           <div className="mission-description  mt-5">

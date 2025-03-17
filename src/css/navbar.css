@@ -103,11 +103,7 @@ body {
   object-fit: cover;
 }
 
-#generalnavbar .navbar-collapse {
-  display: flex;
-  justify-content: center;
-  flex-grow: 1;
-}
+
 
 #generalnavbar .nav {
   display: flex;

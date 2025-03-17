@@ -48,3 +48,10 @@
 .richiestabutton {
     background-color: var(--purple);
 }
+.australia-image {
+    width: 350px;
+    border-radius: 15px;
+    display: block;
+    margin-top: 20px;
+  }
+  

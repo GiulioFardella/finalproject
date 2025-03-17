@@ -15,14 +15,14 @@ function MyNavbar() {
   return (
     <Navbar id="generalnavbar" expand="lg">
       <Container className="custom-container">
-        {/* Logo */}
+    
         <Navbar.Brand href="/" className="logo-container">
           <img src={logo} alt="logo" className="logo" />
         </Navbar.Brand>
-        {/* Toggle per il menu mobile */}
+      
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
-        {/* Navbar Items */}
+    
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mx-auto d-flex align-items-center gap-5 fs-6">
             <Link to={"/chisiamo"} href="#link" className="navlink fw-bold navlink1">
@@ -66,7 +66,7 @@ function MyNavbar() {
           </Nav>
         </Navbar.Collapse>
 
-        {/* Form di ricerca e profilo */}
+      
         <Form className="d-flex search-bar">
           <InputGroup className="searchfield">
             <Form.Control placeholder="Cerca..." aria-label="Search" />
