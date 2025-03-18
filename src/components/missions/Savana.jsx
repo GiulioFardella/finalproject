@@ -42,7 +42,11 @@ function Savana() {
       message: "",
     });
   };
-
+ /// ZOOM dell'immagine 
+ const [isZoomed, setIsZoomed] = useState(false);
+ const toggleZoom = () => {
+   setIsZoomed(!isZoomed);
+ };
   // Gestione donazione
   const handleDonate = () => {
     alert(`Grazie per la donazione di €${donation}!`);
@@ -190,7 +194,12 @@ function Savana() {
                   </Button>
                 </Card.Body>
               </Card>
-              <img src={serengeti} alt="Serengeti" className="serengeti-image" />
+              <img
+                src={serengeti}
+                className={`serengeti-image ${isZoomed ? "zoomed" : ""}`}
+                onClick={toggleZoom}
+                alt="Mappa del Serengeti"
+              />
 
             </Col>
           </Row>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "../../css/montagna.css";
-import ruanda from "../../assets/mappe/ruanda.jpeg"
+import ruanda from "../../assets/mappe/ruanda.jpeg";
 import {
   Container,
   Row,
@@ -39,7 +39,11 @@ function Montagna() {
       message: "",
     });
   };
-
+  /// ZOOM dell'immagine
+  const [isZoomed, setIsZoomed] = useState(false);
+  const toggleZoom = () => {
+    setIsZoomed(!isZoomed);
+  };
   const handleDonate = () => {
     alert(`Grazie per la donazione di €${donation}!`);
   };
@@ -134,7 +138,7 @@ function Montagna() {
                         onChange={handleChange}
                       />
                     </Form.Group>
-                    <Button  type="submit" className="w-100 richiestabutton">
+                    <Button type="submit" className="w-100 richiestabutton">
                       📩 Invia Richiesta
                     </Button>
                   </Form>
@@ -171,16 +175,17 @@ function Montagna() {
                       <option>Bonifico Bancario</option>
                     </Form.Select>
                   </Form.Group>
-                  <Button
-                    
-                    className="w-100 donabutton"
-                    onClick={handleDonate}
-                  >
+                  <Button className="w-100 donabutton" onClick={handleDonate}>
                     💰 Dona Ora
                   </Button>
                 </Card.Body>
               </Card>
-              <img src={ruanda} className="ruanda-image"/>
+              <img
+                src={ruanda}
+                className={`ruanda-image ${isZoomed ? "zoomed" : ""}`}
+                onClick={toggleZoom}
+                alt="Mappa ruanda"
+              />
             </Col>
           </Row>
         </div>

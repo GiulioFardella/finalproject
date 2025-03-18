@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import "../../css/mare.css";
-import australia from "../../assets/mappe/australia.jpeg"
+import australia from "../../assets/mappe/australia.jpeg";
 import {
   Container,
   Row,
@@ -41,6 +41,10 @@ function Mare() {
       taxCode: "",
       message: "",
     });
+  };
+  const [isZoomed, setIsZoomed] = useState(false);
+  const toggleZoom = () => {
+    setIsZoomed(!isZoomed);
   };
 
   // Gestione donazione
@@ -191,65 +195,71 @@ function Mare() {
                   </Button>
                 </Card.Body>
               </Card>
-              <img src={australia} className="australia-image"/>
+              <img
+                src={australia}
+                className={`australia-image ${isZoomed ? "zoomed" : ""}`}
+                onClick={toggleZoom}
+                alt="Mappa dell'Australia"
+              />
             </Col>
           </Row>
 
           <div className="mission-description mt-5">
-          <h3>
-            🌍 Missione di Volontariato: Protezione delle Specie Marine 🌊
-          </h3>
+            <h3>
+              🌍 Missione di Volontariato: Protezione delle Specie Marine 🌊
+            </h3>
 
-          <p>
-            Sulle splendide coste di <strong>Melbourne</strong>, una delle aree
-            più ricche di biodiversità marina, prende vita un'importante
-            iniziativa di conservazione ambientale. In collaborazione con il{" "}
-            <strong>governo australiano</strong>, questa missione di
-            volontariato mira a proteggere le specie marine in via d'estinzione
-            e a preservare l'equilibrio dell'ecosistema oceanico.
-          </p>
+            <p>
+              Sulle splendide coste di <strong>Melbourne</strong>, una delle
+              aree più ricche di biodiversità marina, prende vita un'importante
+              iniziativa di conservazione ambientale. In collaborazione con il{" "}
+              <strong>governo australiano</strong>, questa missione di
+              volontariato mira a proteggere le specie marine in via
+              d'estinzione e a preservare l'equilibrio dell'ecosistema oceanico.
+            </p>
 
-          <h4>🔎 Obiettivo della Missione</h4>
-          <ul>
-            <li>
-              ✔️ <strong>Monitoraggio e tutela</strong> delle specie marine.
-            </li>
-            <li>
-              ✔️ <strong>Ripristino della barriera corallina</strong> e delle
-              aree costiere.
-            </li>
-            <li>
-              ✔️ <strong>Sensibilizzazione delle comunità locali</strong> e
-              attività educative.
-            </li>
-          </ul>
+            <h4>🔎 Obiettivo della Missione</h4>
+            <ul>
+              <li>
+                ✔️ <strong>Monitoraggio e tutela</strong> delle specie marine.
+              </li>
+              <li>
+                ✔️ <strong>Ripristino della barriera corallina</strong> e delle
+                aree costiere.
+              </li>
+              <li>
+                ✔️ <strong>Sensibilizzazione delle comunità locali</strong> e
+                attività educative.
+              </li>
+            </ul>
 
-          <h4>🏠 Alloggio e Vita sul Campo</h4>
-          <ul>
-            <li>🏕️ Alloggio in un eco-villaggio costiero.</li>
-            <li>🍽️ Pasti sostenibili a base di ingredienti locali.</li>
-            <li>🚿 Servizi igienici e spazi comuni ecologici.</li>
-          </ul>
+            <h4>🏠 Alloggio e Vita sul Campo</h4>
+            <ul>
+              <li>🏕️ Alloggio in un eco-villaggio costiero.</li>
+              <li>🍽️ Pasti sostenibili a base di ingredienti locali.</li>
+              <li>🚿 Servizi igienici e spazi comuni ecologici.</li>
+            </ul>
 
-          <h4>📅 Piano della Missione</h4>
-          <ul>
-            <li>🟢 Giorno 1-2: Arrivo a Melbourne, briefing iniziale.</li>
-            <li>
-              🟠 Giorno 3-7: Monitoraggio delle specie marine e pulizia delle
-              spiagge.
-            </li>
-            <li>🔵 Giorno 8-10: Ripristino degli habitat marini.</li>
-            <li>
-              🟣 Giorno 11-12: Attività educative con scuole e comunità locali.
-            </li>
-            <li>🔴 Giorno 13: Debriefing finale e rientro.</li>
-          </ul>
+            <h4>📅 Piano della Missione</h4>
+            <ul>
+              <li>🟢 Giorno 1-2: Arrivo a Melbourne, briefing iniziale.</li>
+              <li>
+                🟠 Giorno 3-7: Monitoraggio delle specie marine e pulizia delle
+                spiagge.
+              </li>
+              <li>🔵 Giorno 8-10: Ripristino degli habitat marini.</li>
+              <li>
+                🟣 Giorno 11-12: Attività educative con scuole e comunità
+                locali.
+              </li>
+              <li>🔴 Giorno 13: Debriefing finale e rientro.</li>
+            </ul>
 
-          <p className="fw-bold">
-            🔗 Unisciti a noi e aiuta a proteggere il mare! 🐬🌊
-          </p>
+            <p className="fw-bold">
+              🔗 Unisciti a noi e aiuta a proteggere il mare! 🐬🌊
+            </p>
+          </div>
         </div>
-    </div>
       </Container>
     </div>
   );

@@ -13,7 +13,7 @@ function Profile() {
     website: "www.mariorossi.com",
     bio: "Amo la natura e mi impegno per proteggerla! 🌍",
     missions: ["2025- Rub'al Khali"], // Una sola missione per volta
-    profilePic: "https://via.placeholder.com/150"
+    profilePic: "https://via.placeholder.com/150",
   });
 
   const [editing, setEditing] = useState(false);
@@ -25,7 +25,7 @@ function Profile() {
     "2025 - Isola di Palawan",
     "2025 - Serengeti",
     "2025 - Melbourne",
-    "2025 - Ruanda"
+    "2025 - Ruanda",
   ];
 
   const handleChange = (e) => {
@@ -57,7 +57,6 @@ function Profile() {
           <Col md={8}>
             <Card className="profile-card">
               <Card.Body className="text-center cardbody">
-                <img src={user.profilePic} alt="" className="profile-img" />
                 {editing ? (
                   <Form>
                     <Form.Group controlId="formName">
@@ -105,15 +104,7 @@ function Profile() {
                         onChange={handleChange}
                       />
                     </Form.Group>
-                    <Form.Group controlId="formWebsite" className="mt-3">
-                      <Form.Label>Sito Web</Form.Label>
-                      <Form.Control
-                        type="text"
-                        name="website"
-                        value={editedUser.website}
-                        onChange={handleChange}
-                      />
-                    </Form.Group>
+
                     <Form.Group controlId="formBio" className="mt-3">
                       <Form.Label>Bio</Form.Label>
                       <Form.Control
@@ -124,20 +115,34 @@ function Profile() {
                         onChange={handleChange}
                       />
                     </Form.Group>
-                    <Button variant="success" className="mt-3" onClick={handleSave}>
+                    <Button
+                      variant="success"
+                      className="mt-3"
+                      onClick={handleSave}
+                    >
                       Salva Modifiche
                     </Button>
                   </Form>
                 ) : (
                   <>
                     <h2>{user.name}</h2>
-                    <p><strong>Username:</strong> {user.username}</p>
-                    <p><strong>Email:</strong> {user.email}</p>
-                    <p><strong>Indirizzo:</strong> {user.address}</p>
-                    <p><strong>Telefono:</strong> {user.phone}</p>
-                    <p><strong>Sito Web:</strong> <a href={user.website}>{user.website}</a></p>
-                    <p className="bio"><strong>Bio:</strong> {user.bio}</p>
-                    <Button variant="primary" onClick={() => setEditing(true)}>
+                    <p>
+                      <strong>Username:</strong> {user.username}
+                    </p>
+                    <p>
+                      <strong>Email:</strong> {user.email}
+                    </p>
+                    <p>
+                      <strong>Indirizzo:</strong> {user.address}
+                    </p>
+                    <p>
+                      <strong>Telefono:</strong> {user.phone}
+                    </p>
+                   
+                    <p className="bio">
+                      <strong>Bio:</strong> {user.bio}
+                    </p>
+                    <Button className="profile-button" onClick={() => setEditing(true)}>
                       Modifica Profilo
                     </Button>
                   </>
@@ -148,12 +153,19 @@ function Profile() {
             <Card className="missions-card mt-4 missiondiv">
               <Card.Body>
                 <h3>La mia missione</h3>
-                <p>Attualmente stai partecipando alla missione: {user.missions[0]}</p>
+                <p>
+                  Attualmente stai partecipando alla missione:{" "}
+                  {user.missions[0]}
+                </p>
 
                 <Form>
                   <Form.Group controlId="formMission" className="mt-3">
                     <Form.Label>Seleziona una missione:</Form.Label>
-                    <Form.Control as="select" value={currentMission} onChange={handleMissionChange}>
+                    <Form.Control
+                      as="select"
+                      value={currentMission}
+                      onChange={handleMissionChange}
+                    >
                       <option value="">Seleziona una missione</option>
                       {missionsOptions.map((mission, index) => (
                         <option key={index} value={mission}>
@@ -163,8 +175,8 @@ function Profile() {
                     </Form.Control>
                   </Form.Group>
                   <Button
-                    variant="primary"
-                    className="mt-3"
+                    
+                    className="mt-3 profile-button"
                     onClick={handleSetMission}
                   >
                     Imposta Missione

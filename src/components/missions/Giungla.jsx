@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import "../../css/giungla.css";
-import filippine from "../../assets/mappe/filippine.jpeg"
+import filippine from "../../assets/mappe/filippine.jpeg";
 import {
   Container,
   Row,
@@ -28,7 +28,11 @@ function Giungla() {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
+  /// ZOOM dell'immagine 
+  const [isZoomed, setIsZoomed] = useState(false);
+  const toggleZoom = () => {
+    setIsZoomed(!isZoomed);
+  };
   // Gestione invio form
   const handleVolunteerSubmit = (e) => {
     e.preventDefault();
@@ -51,7 +55,6 @@ function Giungla() {
   return (
     <div className="giungla-container">
       <Container className="mt-5">
-        
         {/* 🟢 Sezione Missione */}
         <div className="text-center first-content">
           <h2 className="text-center mission-title">
@@ -60,7 +63,7 @@ function Giungla() {
           </h2>
 
           <h4 className="text-center mt-5">
-            <strong>2025: ISOLA DI PALAWAN - Filippine</strong> 
+            <strong>2025: ISOLA DI PALAWAN - Filippine</strong>
           </h4>
 
           <p className="text-light text-center mt-4 mission-paragraph">
@@ -147,7 +150,7 @@ function Giungla() {
                       />
                     </Form.Group>
 
-                    <Button  type="submit" className="w-100 richiestabutton">
+                    <Button type="submit" className="w-100 richiestabutton">
                       📩 Invia Richiesta
                     </Button>
                   </Form>
@@ -163,7 +166,7 @@ function Giungla() {
                     💖 Dona per Proteggere la Giungla
                   </h4>
                   <p>
-                    Il tuo aiuto può salvare animali in pericolo come il tarsio, 
+                    Il tuo aiuto può salvare animali in pericolo come il tarsio,
                     la civetta delle Filippine e il pappagallo del Luzon.
                   </p>
 
@@ -178,41 +181,55 @@ function Giungla() {
                     />
                   </InputGroup>
                   <Form.Group className="mb-3">
-                                <Form.Label>Metodo di Pagamento</Form.Label>
-                                <Form.Select>
-                                  <option>Seleziona un metodo</option>
-                                  <option>Carta di Credito</option>
-                                  <option>PayPal</option>
-                                  <option>Bonifico Bancario</option>
-                                </Form.Select>
-                              </Form.Group>
+                    <Form.Label>Metodo di Pagamento</Form.Label>
+                    <Form.Select>
+                      <option>Seleziona un metodo</option>
+                      <option>Carta di Credito</option>
+                      <option>PayPal</option>
+                      <option>Bonifico Bancario</option>
+                    </Form.Select>
+                  </Form.Group>
 
-                  <Button
-                    
-                    className="w-100 donabutton"
-                    onClick={handleDonate}
-                  >
+                  <Button className="w-100 donabutton" onClick={handleDonate}>
                     💰 Dona Ora
                   </Button>
                 </Card.Body>
               </Card>
-              <img src={filippine} className="filippine-image"/>
+              <img
+                src={filippine}
+                className={`filippine-image ${isZoomed ? "zoomed" : ""}`}
+                onClick={toggleZoom}
+                alt="Mappa delle filipppine"
+              />
             </Col>
           </Row>
 
-          <div className="mt-5 fw-5 fs-6 text-dark bg-light rounded-4 p-3" id="mission-description">
+          <div
+            className="mt-5 fw-5 fs-6 text-dark bg-light rounded-4 p-3"
+            id="mission-description"
+          >
             <h3>🌍 Missione di Volontariato: Protezione della Giungla 🌿</h3>
-            
+
             <p>
-              Nel cuore dell’<strong>isola di Palawan</strong>, una delle aree più biodiverse delle Filippine, prende vita un’importante iniziativa di conservazione. 
-              In collaborazione con il <strong>governo locale</strong>, questa missione di volontariato mira a proteggere la foresta pluviale e la sua fauna in pericolo.
+              Nel cuore dell’<strong>isola di Palawan</strong>, una delle aree
+              più biodiverse delle Filippine, prende vita un’importante
+              iniziativa di conservazione. In collaborazione con il{" "}
+              <strong>governo locale</strong>, questa missione di volontariato
+              mira a proteggere la foresta pluviale e la sua fauna in pericolo.
             </p>
 
             <h4>🔎 Obiettivo della Missione</h4>
             <ul>
-              <li>✔️ <strong>Monitoraggio e tutela</strong> delle specie in pericolo.</li>
-              <li>✔️ <strong>Rimboschimento</strong> delle aree degradate.</li>
-              <li>✔️ <strong>Sensibilizzazione delle comunità locali</strong>.</li>
+              <li>
+                ✔️ <strong>Monitoraggio e tutela</strong> delle specie in
+                pericolo.
+              </li>
+              <li>
+                ✔️ <strong>Rimboschimento</strong> delle aree degradate.
+              </li>
+              <li>
+                ✔️ <strong>Sensibilizzazione delle comunità locali</strong>.
+              </li>
             </ul>
 
             <h4>🏠 Alloggio e Vita sul Campo</h4>
@@ -224,18 +241,33 @@ function Giungla() {
 
             <h4>📅 Piano della Missione (Sintesi)</h4>
             <ul>
-              <li>🟢 <strong>Giorno 1-2</strong>: Arrivo a Manila, trasferimento a Palawan.</li>
-              <li>🟠 <strong>Giorno 3-7</strong>: Monitoraggio della fauna e rimboschimento.</li>
-              <li>🔵 <strong>Giorno 8-10</strong>: Attività educative con le comunità locali.</li>
-              <li>🟣 <strong>Giorno 11-12</strong>: Chiusura missione e preparazione al rientro.</li>
+              <li>
+                🟢 <strong>Giorno 1-2</strong>: Arrivo a Manila, trasferimento a
+                Palawan.
+              </li>
+              <li>
+                🟠 <strong>Giorno 3-7</strong>: Monitoraggio della fauna e
+                rimboschimento.
+              </li>
+              <li>
+                🔵 <strong>Giorno 8-10</strong>: Attività educative con le
+                comunità locali.
+              </li>
+              <li>
+                🟣 <strong>Giorno 11-12</strong>: Chiusura missione e
+                preparazione al rientro.
+              </li>
             </ul>
 
             <h4>📩 Come Partecipare?</h4>
             <p>
-              Compila il modulo per ricevere tutti i <strong>dettagli della missione</strong>.
+              Compila il modulo per ricevere tutti i{" "}
+              <strong>dettagli della missione</strong>.
             </p>
 
-            <p className="fw-bold">🔗 Unisciti a noi e aiuta a proteggere la giungla! 🌳🐾</p>
+            <p className="fw-bold">
+              🔗 Unisciti a noi e aiuta a proteggere la giungla! 🌳🐾
+            </p>
           </div>
         </div>
       </Container>

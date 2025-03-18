@@ -11,6 +11,7 @@
     text-align: center;
     font-size: 2.5rem;
     text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+    
 }
 
 .card {
@@ -37,14 +38,14 @@
     height: 200px;
     padding: 15px;
     text-align: center;
-    border-bottom-left-radius: 18px;
-    border-bottom-right-radius: 18px;
+    border-radius: 0 0 15px 15px; /* Solo gli angoli inferiori arrotondati */
+    background: white;
     
 }
 
 /* 🟢 Pulsante "Adotta" */
 .button {
-    background: linear-gradient(45deg, #ff7300, #ff004c);
+    background: linear-gradient(45deg, var(--green), #ff004c);
     border: none;
     padding: 10px 20px;
     font-size: 1.2rem;
@@ -54,8 +55,8 @@
     transition: all 0.3s ease-in-out;
     display: block;
     margin: 0 auto;
-    text-decoration: none;
 }
+
 
 .button:hover {
     background: linear-gradient(45deg, #ff004c, #ff7300);
@@ -63,7 +64,7 @@
     transform: scale(1.1);
 }
 
-/* 📱 Responsività */
+
 @media screen and (max-width: 768px) {
     .h1ado {
         font-size: 2rem;
@@ -81,6 +82,6 @@
 .animal-name {
     color: white; 
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); 
-    
     font-size: 1.3rem; 
 }
+    

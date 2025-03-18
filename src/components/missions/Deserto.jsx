@@ -42,7 +42,9 @@ function Deserto() {
       message: "",
     });
   };
-
+  const [isZoomed, setIsZoomed] = useState(false);
+  const toggleZoom = () => {
+    setIsZoomed(!isZoomed);};
   // Gestione donazione
   const handleDonate = () => {
     alert(`Grazie per la donazione di €${donation}!`);
@@ -191,7 +193,11 @@ function Deserto() {
                   </Button>
                 </Card.Body>
               </Card>
-              <img src={emirati} className="emirati-image"/>
+              <img
+                src={emirati}
+                className={`emirati-image ${isZoomed ? "zoomed" : ""}`}
+                onClick={toggleZoom}
+                alt="Mappa degli emirati"/>
             </Col>
           </Row>
           <div className="mission-description  mt-5">

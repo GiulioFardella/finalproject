@@ -2,11 +2,11 @@ import { Container, Row, Col } from "react-bootstrap";
 import "../css/footer.css"
 const Footer = () => {
   return (
-    <footer className="bg-dark text-white py-5 mt-auto generalFooter">
+    <footer className="bg-dark text-white py-3 mt-auto generalFooter">
       <Container className="footer-container">
         <Row className="text-center text-md-start">
           {/* Informazioni Aziendali */}
-          <Col md={3} className="mb-3">
+          <Col md={3} className="mb-1">
             <h5>ZooVersee</h5>
             <p>Via Po 25/c, 00198 Roma</p>
             <p>Telefono: 06844971</p>
