@@ -16,23 +16,32 @@ function LoginModal({ show, handleClose }) {
     setLoading(true);
     setError(null);
 
+    const url = `http://localhost:8080/api/utenti/login?email=${encodeURIComponent(
+      email
+    )}&password=${encodeURIComponent(password)}`;
+
     try {
-      const response = await fetch("http://localhost:8080/api/utenti/login", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(url, { method: "GET" });
+      const contentType = response.headers.get("content-type");
 
-      if (!response.ok) {
-        throw new Error("Errore durante il login. Riprova.");
+      if (response.ok) {
+        let data;
+        if (contentType && contentType.includes("application/json")) {
+          data = await response.json();
+          console.log("Risposta JSON:", data);
+        } else {
+          data = await response.text();
+          console.log("Risposta Testo:", data);
+        }
+        handleClose();
+        navigate("/");
+      } else {
+        setError(`Login fallito. Codice: ${response.status}`);
+        console.error("Errore nella response:", response.statusText);
       }
-
-      // Se il login ha successo, chiudi il modale e naviga alla home
-      handleClose();
-      navigate("/");
-    } catch (err) {
-      setError(err.message);
+    } catch (error) {
+      setError("Errore durante la chiamata al server: " + error.message);
+      console.error("Errore:", error);
     } finally {
       setLoading(false);
     }
