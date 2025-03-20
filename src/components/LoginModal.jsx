@@ -1,11 +1,12 @@
-// LoginModal.jsx
 import { Modal, Button, Form } from "react-bootstrap";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../contexts/UserContext";
 import "../css/login.css";
 
 function LoginModal({ show, handleClose }) {
   const navigate = useNavigate();
+  const { setLoggedUser } = useContext(UserContext); // ✅ Context
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
@@ -27,8 +28,9 @@ function LoginModal({ show, handleClose }) {
       if (response.ok) {
         const data = await response.json();
         console.log("Login effettuato:", data);
+        setLoggedUser(data); // ✅ Salva utente nel Context
         handleClose();
-        navigate("/");
+        navigate("/"); // Torna alla home
       } else {
         setError("Credenziali errate. Riprova.");
       }
@@ -82,7 +84,7 @@ function LoginModal({ show, handleClose }) {
                 className="button"
                 onClick={() => {
                   handleClose();
-                  navigate("/registrazione");
+                  navigate("/registrazione"); // ✅ Porta alla registrazione
                 }}
               >
                 Registrati

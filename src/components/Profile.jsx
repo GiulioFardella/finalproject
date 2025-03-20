@@ -1,24 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Container, Row, Col, Card, Button, Form } from "react-bootstrap";
-import "../assets/fern.jpg";
+import { UserContext } from "../contexts/UserContext";
 import "../css/profile.css";
 
 function Profile() {
-  const [user, setUser] = useState({
-    name: "Mario Rossi",
-    username: "mariorossi93",
-    email: "mario.rossi@email.com",
-    address: "Via Roma, 10, Milano",
-    phone: "+39 333 1234567",
-    website: "www.mariorossi.com",
-    bio: "Amo la natura e mi impegno per proteggerla! 🌍",
-    missions: ["2025- Rub'al Khali"], // Una sola missione per volta
-    profilePic: "https://via.placeholder.com/150",
-  });
-
+  const { loggedUser } = useContext(UserContext);
+  const [user, setUser] = useState(null);
   const [editing, setEditing] = useState(false);
-  const [editedUser, setEditedUser] = useState({ ...user });
-  const [currentMission, setCurrentMission] = useState(user.missions[0] || ""); // Imposta la missione corrente
+  const [editedUser, setEditedUser] = useState(null);
+  const [currentMission, setCurrentMission] = useState("");
 
   const missionsOptions = [
     "2025 - Rub'al Khali",
@@ -28,27 +18,55 @@ function Profile() {
     "2025 - Ruanda",
   ];
 
+  useEffect(() => {
+    const fetchUser = async () => {
+      if (!loggedUser) return; // Non loggato, non fare nulla
+
+      try {
+        const response = await fetch(`http://localhost:8080/api/utenti/${loggedUser.email}`);
+        if (!response.ok) throw new Error("Errore nel recupero dati");
+        const data = await response.json();
+        setUser(data);
+        setEditedUser(data);
+        setCurrentMission(data.mission || "");
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    fetchUser();
+  }, [loggedUser]);
+
   const handleChange = (e) => {
     setEditedUser({ ...editedUser, [e.target.name]: e.target.value });
   };
 
-  const handleSave = () => {
-    setUser(editedUser);
-    setEditing(false);
+  const handleSave = async () => {
+    try {
+      const response = await fetch(`http://localhost:8080/api/utenti/${user.id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(editedUser),
+      });
+      if (!response.ok) throw new Error("Errore aggiornamento");
+      const updatedUser = await response.json();
+      setUser(updatedUser);
+      setEditing(false);
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   const handleMissionChange = (e) => {
-    setCurrentMission(e.target.value); // Aggiorna la missione selezionata
+    setCurrentMission(e.target.value);
   };
 
   const handleSetMission = () => {
-    if (currentMission) {
-      // Imposta la missione selezionata nell'array delle missioni (una sola missione alla volta)
-      setUser({ ...user, missions: [currentMission] });
-    } else {
-      alert("Seleziona una missione per impostarla!");
-    }
+    alert(`Missione impostata: ${currentMission}`);
   };
+
+  if (!loggedUser) return <p>Non sei loggato!</p>;
+  if (!user) return <p>Caricamento profilo...</p>;
 
   return (
     <div className="profile-container">
@@ -59,12 +77,21 @@ function Profile() {
               <Card.Body className="text-center cardbody">
                 {editing ? (
                   <Form>
-                    <Form.Group controlId="formName">
+                    <Form.Group controlId="formFirstname">
                       <Form.Label>Nome</Form.Label>
                       <Form.Control
                         type="text"
-                        name="name"
-                        value={editedUser.name}
+                        name="firstname"
+                        value={editedUser.firstname}
+                        onChange={handleChange}
+                      />
+                    </Form.Group>
+                    <Form.Group controlId="formLastname" className="mt-3">
+                      <Form.Label>Cognome</Form.Label>
+                      <Form.Control
+                        type="text"
+                        name="lastname"
+                        value={editedUser.lastname}
                         onChange={handleChange}
                       />
                     </Form.Group>
@@ -86,62 +113,36 @@ function Profile() {
                         onChange={handleChange}
                       />
                     </Form.Group>
-                    <Form.Group controlId="formAddress" className="mt-3">
-                      <Form.Label>Indirizzo</Form.Label>
+                    <Form.Group controlId="formCity" className="mt-3">
+                      <Form.Label>Città</Form.Label>
                       <Form.Control
                         type="text"
-                        name="address"
-                        value={editedUser.address}
+                        name="city"
+                        value={editedUser.city}
                         onChange={handleChange}
                       />
                     </Form.Group>
-                    <Form.Group controlId="formPhone" className="mt-3">
-                      <Form.Label>Numero di Telefono</Form.Label>
+                    <Form.Group controlId="formState" className="mt-3">
+                      <Form.Label>Stato</Form.Label>
                       <Form.Control
                         type="text"
-                        name="phone"
-                        value={editedUser.phone}
+                        name="state"
+                        value={editedUser.state}
                         onChange={handleChange}
                       />
                     </Form.Group>
 
-                    <Form.Group controlId="formBio" className="mt-3">
-                      <Form.Label>Bio</Form.Label>
-                      <Form.Control
-                        as="textarea"
-                        rows={2}
-                        name="bio"
-                        value={editedUser.bio}
-                        onChange={handleChange}
-                      />
-                    </Form.Group>
-                    <Button
-                      variant="success"
-                      className="mt-3"
-                      onClick={handleSave}
-                    >
+                    <Button variant="success" className="mt-3" onClick={handleSave}>
                       Salva Modifiche
                     </Button>
                   </Form>
                 ) : (
                   <>
-                    <h2>{user.name}</h2>
-                    <p>
-                      <strong>Username:</strong> {user.username}
-                    </p>
-                    <p>
-                      <strong>Email:</strong> {user.email}
-                    </p>
-                    <p>
-                      <strong>Indirizzo:</strong> {user.address}
-                    </p>
-                    <p>
-                      <strong>Telefono:</strong> {user.phone}
-                    </p>
-                   
-                    <p className="bio">
-                      <strong>Bio:</strong> {user.bio}
-                    </p>
+                    <h2>{user.firstname} {user.lastname}</h2>
+                    <p><strong>Username:</strong> {user.username}</p>
+                    <p><strong>Email:</strong> {user.email}</p>
+                    <p><strong>Città:</strong> {user.city}</p>
+                    <p><strong>Stato:</strong> {user.state}</p>
                     <Button className="profile-button" onClick={() => setEditing(true)}>
                       Modifica Profilo
                     </Button>
@@ -153,10 +154,7 @@ function Profile() {
             <Card className="missions-card mt-4 missiondiv">
               <Card.Body>
                 <h3>La mia missione</h3>
-                <p>
-                  Attualmente stai partecipando alla missione:{" "}
-                  {user.missions[0]}
-                </p>
+                <p>Attualmente stai partecipando alla missione: {currentMission}</p>
 
                 <Form>
                   <Form.Group controlId="formMission" className="mt-3">
@@ -174,11 +172,7 @@ function Profile() {
                       ))}
                     </Form.Control>
                   </Form.Group>
-                  <Button
-                    
-                    className="mt-3 profile-button"
-                    onClick={handleSetMission}
-                  >
+                  <Button className="mt-3 profile-button" onClick={handleSetMission}>
                     Imposta Missione
                   </Button>
                 </Form>

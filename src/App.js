@@ -1,8 +1,10 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { UserProvider } from "./contexts/UserContext";  // ✅ IMPORTATO QUI
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { useState, useEffect } from "react";
 import Chisiamo from "./components/navbarcomponents/Chisiamo";
 import Footer from "./components/Footer";
 import MyNavbar from "./components/MyNavbar";
@@ -26,35 +28,38 @@ function App() {
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    setShowModal(true); // Mostra il modale all'avvio dell'app
+    setShowModal(true);
   }, []);
 
   return (
-    <BrowserRouter>
-      <MyNavbar />
-      
-      <LoginModal show={showModal} handleClose={() => setShowModal(false)} />
-      <Routes>
-        <Route path="/interventi" element={<Interventi/>}/>
-        <Route path="/perche" element={<Perche/>}/>
-        <Route path="/cosafacciamo" element={<Cosafacciamo/>}/>
-        <Route path="/chisiamo" element={<Chisiamo />} />
-        <Route path="/" element={<MyCarousel />} />
-        <Route path="/deserto" element={<Deserto />} />
-        <Route path="/mare" element={<Mare />} />
-        <Route path="/montagna" element={<Montagna />} />
-        <Route path="/giungla" element={<Giungla />} />
-        <Route path="/savana" element={<Savana />} />
-        <Route path="/rinuncia" element={<Rinuncia />} />
-        <Route path="/profilo" element={<Profile />} />
-        <Route path="/adozione" element={<AdoptPage />} />
-        <Route path="/registrazione" element={<RegisterPage />} />
-        <Route path="/donazione" element={<Donation />} />
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+    <UserProvider> {/* ✅ AVVOLGI TUTTO */}
+      <BrowserRouter>
+        <MyNavbar />
+
+        <LoginModal show={showModal} handleClose={() => setShowModal(false)} />
+
+        <Routes>
+          <Route path="/interventi" element={<Interventi />} />
+          <Route path="/perche" element={<Perche />} />
+          <Route path="/cosafacciamo" element={<Cosafacciamo />} />
+          <Route path="/chisiamo" element={<Chisiamo />} />
+          <Route path="/" element={<MyCarousel />} />
+          <Route path="/deserto" element={<Deserto />} />
+          <Route path="/mare" element={<Mare />} />
+          <Route path="/montagna" element={<Montagna />} />
+          <Route path="/giungla" element={<Giungla />} />
+          <Route path="/savana" element={<Savana />} />
+          <Route path="/rinuncia" element={<Rinuncia />} />
+          <Route path="/profilo" element={<Profile />} /> {/* ✅ NON SERVE PIU’ EMAIL */}
+          <Route path="/adozione" element={<AdoptPage />} />
+          <Route path="/registrazione" element={<RegisterPage />} />
+          <Route path="/donazione" element={<Donation />} />
+        </Routes>
+
+        <Footer />
+      </BrowserRouter>
+    </UserProvider>
   );
 }
 
 export default App;
-
