@@ -16,34 +16,30 @@ const Donation = () => {
     importo: "",
     nomeCompleto: "",
     email: "",
-    metodoPagamento: "",
   });
 
   const [message, setMessage] = useState(null);
   const [error, setError] = useState(null);
 
-  // Funzione per aggiornare lo stato quando l'utente scrive nei campi
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  // Funzione per inviare il form al backend
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:8080/donazione", {
+      const response = await fetch("http://localhost:8080/donazioni", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          utente: { id: 1 }, // Sostituisci con un ID dinamico se necessario
+          utente: { id: 1 },
           importo: parseFloat(formData.importo),
           nomeCompleto: formData.nomeCompleto,
           email: formData.email,
-          metodoPagamento: formData.metodoPagamento,
         }),
       });
 
@@ -51,9 +47,9 @@ const Donation = () => {
         throw new Error("Errore nell'elaborazione della donazione.");
       }
 
-      setMessage("Donazione effettuata con successo!");
-      setError(null);
-      setFormData({ importo: "", nomeCompleto: "", email: "", metodoPagamento: "" });
+      // Redirect a Stripe Payment Link
+      window.location.href = "https://buy.stripe.com/test_fZeg177GB2T33G83cc";
+      
     } catch (err) {
       setError(err.message);
       setMessage(null);
@@ -71,7 +67,6 @@ const Donation = () => {
                   Fai una Donazione
                 </Card.Title>
 
-                {/* Messaggi di Successo / Errore */}
                 {message && <Alert variant="success">{message}</Alert>}
                 {error && <Alert variant="danger">{error}</Alert>}
 
@@ -118,21 +113,6 @@ const Donation = () => {
                       value={formData.email}
                       onChange={handleChange}
                     />
-                  </Form.Group>
-
-                  <Form.Group className="mb-3">
-                    <Form.Label>Metodo di Pagamento</Form.Label>
-                    <Form.Select
-                      name="metodoPagamento"
-                      value={formData.metodoPagamento}
-                      onChange={handleChange}
-                      required
-                    >
-                      <option value="">Seleziona un metodo</option>
-                      <option value="Carta di Credito">Carta di Credito</option>
-                      <option value="PayPal">PayPal</option>
-                      <option value="Bonifico Bancario">Bonifico Bancario</option>
-                    </Form.Select>
                   </Form.Group>
 
                   <Button variant="success" type="submit" className="w-100 donation-button">
