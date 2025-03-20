@@ -43,7 +43,12 @@ function LoginModal({ show, handleClose }) {
   };
 
   return (
-    <Modal show={show} onHide={handleClose} centered className="modal-container">
+    <Modal
+      show={show}
+      onHide={handleClose}
+      centered
+      className="modal-container"
+    >
       <div className="modal-content">
         <Modal.Header closeButton className="generalModal">
           <Modal.Title className="modaltitle">Accedi o Registrati</Modal.Title>
@@ -72,7 +77,9 @@ function LoginModal({ show, handleClose }) {
             </Form.Group>
 
             {/* Messaggio di errore in caso di problemi */}
-            {error && <p style={{ color: "red", textAlign: "center" }}>{error}</p>}
+            {error && (
+              <p style={{ color: "red", textAlign: "center" }}>{error}</p>
+            )}
 
             <div className="loginButtons d-flex justify-content-around">
               <Button type="submit" className="button" disabled={loading}>
