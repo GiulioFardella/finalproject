@@ -1,3 +1,4 @@
+// LoginModal.jsx
 import { Modal, Button, Form } from "react-bootstrap";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -16,31 +17,23 @@ function LoginModal({ show, handleClose }) {
     setLoading(true);
     setError(null);
 
-    const url = `http://localhost:8080/api/utenti/login?email=${encodeURIComponent(
-      email
-    )}&password=${encodeURIComponent(password)}`;
-
     try {
-      const response = await fetch(url, { method: "GET" });
-      const contentType = response.headers.get("content-type");
+      const response = await fetch("http://localhost:8080/api/utenti/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
 
       if (response.ok) {
-        let data;
-        if (contentType && contentType.includes("application/json")) {
-          data = await response.json();
-          console.log("Risposta JSON:", data);
-        } else {
-          data = await response.text();
-          console.log("Risposta Testo:", data);
-        }
+        const data = await response.json();
+        console.log("Login effettuato:", data);
         handleClose();
         navigate("/");
       } else {
-        setError(`Login fallito. Codice: ${response.status}`);
-        console.error("Errore nella response:", response.statusText);
+        setError("Credenziali errate. Riprova.");
       }
     } catch (error) {
-      setError("Errore durante la chiamata al server: " + error.message);
+      setError("Errore di connessione al server");
       console.error("Errore:", error);
     } finally {
       setLoading(false);
@@ -48,12 +41,7 @@ function LoginModal({ show, handleClose }) {
   };
 
   return (
-    <Modal
-      show={show}
-      onHide={handleClose}
-      centered
-      className="modal-container"
-    >
+    <Modal show={show} onHide={handleClose} centered className="modal-container">
       <div className="modal-content">
         <Modal.Header closeButton className="generalModal">
           <Modal.Title className="modaltitle">Accedi o Registrati</Modal.Title>
@@ -82,9 +70,7 @@ function LoginModal({ show, handleClose }) {
             </Form.Group>
 
             {/* Messaggio di errore in caso di problemi */}
-            {error && (
-              <p style={{ color: "red", textAlign: "center" }}>{error}</p>
-            )}
+            {error && <p style={{ color: "red", textAlign: "center" }}>{error}</p>}
 
             <div className="loginButtons d-flex justify-content-around">
               <Button type="submit" className="button" disabled={loading}>
