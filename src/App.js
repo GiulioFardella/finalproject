@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { UserProvider } from "./contexts/UserContext";  // ✅ IMPORTATO QUI
+import { UserProvider } from "./contexts/UserContext";  
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -23,6 +23,7 @@ import Rinuncia from "./components/missions/Rinuncia";
 import Cosafacciamo from "./components/navbarcomponents/Cosafacciamo";
 import Perche from "./components/navbarcomponents/Perche";
 import Interventi from "./components/navbarcomponents/Interventi";
+import LogoutButton from "./components/LogoutButton";
 
 function App() {
   const [showModal, setShowModal] = useState(false);
@@ -32,7 +33,7 @@ function App() {
   }, []);
 
   return (
-    <UserProvider> {/* ✅ AVVOLGI TUTTO */}
+    <UserProvider> 
       <BrowserRouter>
         <MyNavbar />
 
@@ -50,10 +51,11 @@ function App() {
           <Route path="/giungla" element={<Giungla />} />
           <Route path="/savana" element={<Savana />} />
           <Route path="/rinuncia" element={<Rinuncia />} />
-          <Route path="/profilo" element={<Profile />} /> {/* ✅ NON SERVE PIU’ EMAIL */}
+          <Route path="/profilo" element={<Profile />} /> 
           <Route path="/adozione" element={<AdoptPage />} />
           <Route path="/registrazione" element={<RegisterPage />} />
           <Route path="/donazione" element={<Donation />} />
+          <Route path="/logout" element={<LogoutButton/>}/>
         </Routes>
 
         <Footer />

@@ -1,26 +1,19 @@
 import { useState, useEffect, useContext } from "react";
 import { Container, Row, Col, Card, Button, Form } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import { UserContext } from "../contexts/UserContext";
 import "../css/profile.css";
 
 function Profile() {
-  const { loggedUser } = useContext(UserContext);
+  const { loggedUser, setLoggedUser } = useContext(UserContext);
   const [user, setUser] = useState(null);
   const [editing, setEditing] = useState(false);
   const [editedUser, setEditedUser] = useState(null);
-  const [currentMission, setCurrentMission] = useState("");
-
-  const missionsOptions = [
-    "2025 - Rub'al Khali",
-    "2025 - Isola di Palawan",
-    "2025 - Serengeti",
-    "2025 - Melbourne",
-    "2025 - Ruanda",
-  ];
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchUser = async () => {
-      if (!loggedUser) return; // Non loggato, non fare nulla
+      if (!loggedUser) return;
 
       try {
         const response = await fetch(`http://localhost:8080/api/utenti/${loggedUser.email}`);
@@ -28,7 +21,6 @@ function Profile() {
         const data = await response.json();
         setUser(data);
         setEditedUser(data);
-        setCurrentMission(data.mission || "");
       } catch (err) {
         console.error(err);
       }
@@ -57,12 +49,17 @@ function Profile() {
     }
   };
 
-  const handleMissionChange = (e) => {
-    setCurrentMission(e.target.value);
-  };
-
-  const handleSetMission = () => {
-    alert(`Missione impostata: ${currentMission}`);
+  const handleLogout = async () => {
+    try {
+      await fetch("http://localhost:8080/logout", {
+        method: "POST",
+        credentials: "include",
+      });
+      setLoggedUser(null);
+      navigate("/login");
+    } catch (err) {
+      console.error("Errore nel logout", err);
+    }
   };
 
   if (!loggedUser) return <p>Non sei loggato!</p>;
@@ -151,33 +148,15 @@ function Profile() {
               </Card.Body>
             </Card>
 
-            <Card className="missions-card mt-4 missiondiv">
-              <Card.Body>
-                <h3>La mia missione</h3>
-                <p>Attualmente stai partecipando alla missione: {currentMission}</p>
+            {/* Bottone Logout */}
+            <Row className="mt-4 justify-content-center">
+              <Col md={8} className="text-center">
+                <Button variant="danger" onClick={handleLogout}>
+                  Logout
+                </Button>
+              </Col>
+            </Row>
 
-                <Form>
-                  <Form.Group controlId="formMission" className="mt-3">
-                    <Form.Label>Seleziona una missione:</Form.Label>
-                    <Form.Control
-                      as="select"
-                      value={currentMission}
-                      onChange={handleMissionChange}
-                    >
-                      <option value="">Seleziona una missione</option>
-                      {missionsOptions.map((mission, index) => (
-                        <option key={index} value={mission}>
-                          {mission}
-                        </option>
-                      ))}
-                    </Form.Control>
-                  </Form.Group>
-                  <Button className="mt-3 profile-button" onClick={handleSetMission}>
-                    Imposta Missione
-                  </Button>
-                </Form>
-              </Card.Body>
-            </Card>
           </Col>
         </Row>
       </Container>
