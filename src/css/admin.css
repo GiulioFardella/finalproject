@@ -1,0 +1,33 @@
+.admin-container {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.admin-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--purple);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.admin-table img {
+  width: 100px;
+  height: auto;
+  border-radius: 12px;
+}
+
+.admin-buttons button {
+  margin-right: 10px;
+  border-radius: 12px;
+}
+
+.admin-buttons .btn-primary {
+  background-color: var(--blue);
+  border: none;
+}
+
+.admin-buttons .btn-danger {
+  background-color: var(--orange);
+  border: none;
+}
