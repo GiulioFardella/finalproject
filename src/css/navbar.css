@@ -129,6 +129,7 @@ body {
 #habitat3:hover { background-color: #e37c5d; }
 #habitat4:hover { background-color: #4e72d3; }
 #habitat5:hover { background-color: #d11d69; }
+#habitat6:hover { background-color:black; }
 
 a:visited {
   color: inherit;

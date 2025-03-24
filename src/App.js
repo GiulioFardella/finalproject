@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useState, useEffect } from "react";
-import { UserProvider } from "./contexts/UserContext";  
+import { useState, useEffect, useContext } from "react"; // AGGIUNTO useContext
+import { UserProvider, UserContext } from "./contexts/UserContext"; // AGGIUNTO UserContext
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -24,22 +24,26 @@ import Cosafacciamo from "./components/navbarcomponents/Cosafacciamo";
 import Perche from "./components/navbarcomponents/Perche";
 import Interventi from "./components/navbarcomponents/Interventi";
 import LogoutButton from "./components/LogoutButton";
+import AdminPage from "./components/Adminpage";
 
 function App() {
   const [showModal, setShowModal] = useState(false);
+  const { loggedUser } = useContext(UserContext); // AGGIUNTO QUI!
 
   useEffect(() => {
     setShowModal(true);
   }, []);
 
   return (
-    <UserProvider> 
+    <UserProvider>
       <BrowserRouter>
         <MyNavbar />
 
         <LoginModal show={showModal} handleClose={() => setShowModal(false)} />
 
         <Routes>
+
+          <Route path="/admin" element={<AdminPage />} />
           <Route path="/interventi" element={<Interventi />} />
           <Route path="/perche" element={<Perche />} />
           <Route path="/cosafacciamo" element={<Cosafacciamo />} />
@@ -51,11 +55,11 @@ function App() {
           <Route path="/giungla" element={<Giungla />} />
           <Route path="/savana" element={<Savana />} />
           <Route path="/rinuncia" element={<Rinuncia />} />
-          <Route path="/profilo" element={<Profile />} /> 
+          <Route path="/profilo" element={<Profile />} />
           <Route path="/adozione" element={<AdoptPage />} />
           <Route path="/registrazione" element={<RegisterPage />} />
           <Route path="/donazione" element={<Donation />} />
-          <Route path="/logout" element={<LogoutButton/>}/>
+          <Route path="/logout" element={<LogoutButton />} />
         </Routes>
 
         <Footer />

@@ -1,38 +1,37 @@
 .profile-container {
-    padding: 3rem;
-    background-image: url(../assets/coral.jpg);
-    background-size: cover;
-    min-height: 100vh; 
-    display: flex;
-    flex-direction: column; 
-    justify-content: center; 
-  }
-  .mission-card{
-    margin-top: 3rem;
-  }
-  .missiondiv {
-    margin-bottom: 2rem;
-  }
+  padding: 3rem;
+  background-image: url(../assets/coral.jpg);
+  background-size: cover;
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+}
+.mission-card{
+  margin-top: 3rem;
+}
+.missiondiv {
+  margin-bottom: 2rem;
+}
+
+.cardbody {
+  min-height: 400px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  padding: 15px;
+  text-align: center;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
   
-  .cardbody {
-    min-height: 400px; 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; 
-    padding: 15px;
-    text-align: center;
-    border-bottom-left-radius: 18px;
-    border-bottom-right-radius: 18px;
-    
-  }
-  
-  .cardbody img.profile-img {
-    max-width: 150px;
-    height: auto;
-    margin-bottom: 1rem;
-  }
-  
-  .agrees {
-    color: white;
-  }
-  
+}
+
+.cardbody img.profile-img {
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.agrees {
+  color: white;
+}

@@ -67,6 +67,7 @@ function Profile() {
 
   return (
     <div className="profile-container">
+      
       <Container>
         <Row className="justify-content-center">
           <Col md={8}>
@@ -160,6 +161,7 @@ function Profile() {
           </Col>
         </Row>
       </Container>
+      
     </div>
   );
 }
