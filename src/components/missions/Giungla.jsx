@@ -81,7 +81,7 @@ function Giungla() {
             <strong>2025: ISOLA DI PALAWAN - Filippine</strong>
           </h4>
 
-          <p className="text-light text-center mt-4 mission-paragraph">
+          <p className="text-light text-center fs-2 mt-4 mission-paragraph">
             Partecipa alla nostra missione più importante per <span className="fw-bold">proteggere la foresta pluviale</span> e <span className="fw-bold">salvaguardare specie in pericolo:</span>
           </p>
 

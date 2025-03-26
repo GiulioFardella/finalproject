@@ -47,23 +47,23 @@ console.log("Loggeduser:", loggedUser)
 
             <NavDropdown title="PARTECIPA A UNA MISSIONE" id="basic-nav-dropdown" className="custom-dropdown">
               <NavDropdown.Item as={Link} to="/savana" id="habitat2">
-                Savana 🌾
+                Savana 
               </NavDropdown.Item>
 
               <NavDropdown.Item as={Link} to="/giungla" id="habitat1">
-                Giungla 🌳
+                Giungla 
               </NavDropdown.Item>
 
               <NavDropdown.Item as={Link} to="/deserto" id="habitat3">
-                Deserto 🌵
+                Deserto 
               </NavDropdown.Item>
 
               <NavDropdown.Item as={Link} to="/mare" id="habitat4">
-                Mare 🌊
+                Mare 
               </NavDropdown.Item>
 
               <NavDropdown.Item as={Link} to="/montagna" id="habitat5">
-                Montagna ⛰️
+                Montagna 
               </NavDropdown.Item>
 
               <NavDropdown.Divider />

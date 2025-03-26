@@ -80,7 +80,7 @@ function Deserto() {
             <strong>2025: RUB' AL KHALI - Emirati Arabi Uniti</strong>
           </h4>
 
-          <p className="text-muted text-center mt-4 mission-paragraph">
+          <p className=" text-center mt-4 mission-paragraph">
             Partecipa alla nostra missione più ardua per <span className="fw-bold">proteggere l'habitat</span> e <span className="fw-bold">salvaguardare specie in pericolo:</span>
           </p>
 

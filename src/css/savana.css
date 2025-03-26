@@ -9,6 +9,7 @@
 }
 
 .mission-title {
+  
   font-weight: bold;
   font-size: 2rem;
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
@@ -18,6 +19,7 @@
 }
 .mission-paragraph {
   font-size: 1.5rem;
+  font-style: white;
 }
 
 .mission-list li {
@@ -66,7 +68,7 @@
   border-radius: 10px;
 }
 
-/* 🌓 Overlay per chiudere immagine */
+
 .overlay {
   position: fixed;
   top: 0;
