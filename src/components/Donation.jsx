@@ -63,7 +63,7 @@ const Donation = () => {
           <Col xs={12} md={8} lg={6} className="mx-auto">
             <Card className="p-4 shadow card-body">
               <Card.Body>
-                <Card.Title className="text-center">
+                <Card.Title className="text-center text-light fw-bold fs-3">
                   Fai una Donazione
                 </Card.Title>
 

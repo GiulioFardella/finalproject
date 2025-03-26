@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import { Container, Row, Col, Card, Button, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../contexts/UserContext";
+import LoginModal from "./LoginModal"; // 👈 Import modale login
 import "../css/profile.css";
 
 function Profile() {
@@ -9,6 +10,7 @@ function Profile() {
   const [user, setUser] = useState(null);
   const [editing, setEditing] = useState(false);
   const [editedUser, setEditedUser] = useState(null);
+  const [showModal, setShowModal] = useState(false); // Stato per modale
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -62,12 +64,29 @@ function Profile() {
     }
   };
 
-  if (!loggedUser) return <p>Non sei loggato!</p>;
+  if (!loggedUser) {
+    return (
+      <div className="errorLog">
+        <div className="errorContent text-center">
+          <p className="fw-bold fs-1">Non sei loggato!</p>
+          <div className="d-flex justify-content-center gap-3 mt-4">
+            <Button variant="primary" onClick={() => setShowModal(true)}>
+              Accedi
+            </Button>
+            <Button variant="success" onClick={() => navigate("/registrazione")}>
+              Registrati
+            </Button>
+          </div>
+        </div>
+        <LoginModal show={showModal} handleClose={() => setShowModal(false)} />
+      </div>
+    );
+  }
+
   if (!user) return <p>Caricamento profilo...</p>;
 
   return (
     <div className="profile-container">
-      
       <Container>
         <Row className="justify-content-center">
           <Col md={8}>
@@ -149,7 +168,6 @@ function Profile() {
               </Card.Body>
             </Card>
 
-            {/* Bottone Logout */}
             <Row className="mt-4 justify-content-center">
               <Col md={8} className="text-center">
                 <Button variant="danger" onClick={handleLogout}>
@@ -157,11 +175,9 @@ function Profile() {
                 </Button>
               </Col>
             </Row>
-
           </Col>
         </Row>
       </Container>
-      
     </div>
   );
 }

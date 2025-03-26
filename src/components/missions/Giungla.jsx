@@ -1,7 +1,8 @@
-import { useState } from "react";
-
-import "../../css/giungla.css";
+// Componente completo di Giungla con controllo login, Stripe e backend donazioni
+import { useState, useContext } from "react";
+import { UserContext } from "../../contexts/UserContext";
 import filippine from "../../assets/mappe/filippine.jpeg";
+import "../../css/giungla.css";
 import {
   Container,
   Row,
@@ -13,6 +14,8 @@ import {
 } from "react-bootstrap";
 
 function Giungla() {
+  const { loggedUser } = useContext(UserContext);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -22,18 +25,14 @@ function Giungla() {
     message: "",
   });
 
-  const [donation, setDonation] = useState(10); // Importo di default
+  const [donation, setDonation] = useState(10);
+  const [isZoomed, setIsZoomed] = useState(false);
+  const toggleZoom = () => setIsZoomed(!isZoomed);
 
-  // Gestione input form volontariato
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-  /// ZOOM dell'immagine 
-  const [isZoomed, setIsZoomed] = useState(false);
-  const toggleZoom = () => {
-    setIsZoomed(!isZoomed);
-  };
-  // Gestione invio form
+
   const handleVolunteerSubmit = (e) => {
     e.preventDefault();
     alert(`Grazie ${formData.name}, la tua richiesta è stata inviata!`);
@@ -47,19 +46,35 @@ function Giungla() {
     });
   };
 
-  // Gestione donazione
-  const handleDonate = () => {
-    alert(`Grazie per la donazione di €${donation}!`);
+  const handleMissionDonate = async () => {
+    if (!loggedUser) {
+      window.location.href = "/registrazione";
+      return;
+    }
+
+    try {
+      await fetch("http://localhost:8080/api/donazioni", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          utenteId: loggedUser.id,
+          importo: parseFloat(donation),
+          tipo: "MISSIONE_GIUNGLA",
+        }),
+      });
+      window.location.href = "https://buy.stripe.com/test_fZeg177GB2T33G83cc";
+    } catch (err) {
+      console.error("Errore donazione:", err);
+      alert("Si è verificato un errore con la donazione.");
+    }
   };
 
   return (
     <div className="giungla-container">
       <Container className="mt-5">
-        {/* 🟢 Sezione Missione */}
         <div className="text-center first-content">
           <h2 className="text-center mission-title">
-            🌿 Unisciti a tante persone per proteggere la{" "}
-            <span>Giungla delle Filippine</span>
+            🌿 Unisciti a tante persone per proteggere la <span>Giungla delle Filippine</span>
           </h2>
 
           <h4 className="text-center mt-5">
@@ -67,9 +82,7 @@ function Giungla() {
           </h4>
 
           <p className="text-light text-center mt-4 mission-paragraph">
-            Partecipa alla nostra missione più importante per{" "}
-            <span className="fw-bold">proteggere la foresta pluviale</span> e{" "}
-            <span className="fw-bold">salvaguardare specie in pericolo:</span>
+            Partecipa alla nostra missione più importante per <span className="fw-bold">proteggere la foresta pluviale</span> e <span className="fw-bold">salvaguardare specie in pericolo:</span>
           </p>
 
           <ul className="mission-list">
@@ -81,7 +94,6 @@ function Giungla() {
 
         <div className="form-section">
           <Row>
-            {/* 🟠 Form di Partecipazione */}
             <Col md={6}>
               <Card className="shadow">
                 <Card.Body>
@@ -89,67 +101,28 @@ function Giungla() {
                   <Form onSubmit={handleVolunteerSubmit}>
                     <Form.Group className="mb-3">
                       <Form.Label>Nome Completo</Form.Label>
-                      <Form.Control
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                      />
+                      <Form.Control type="text" name="name" value={formData.name} onChange={handleChange} required />
                     </Form.Group>
                     <Form.Group className="mb-3">
                       <Form.Label>Data di nascita</Form.Label>
-                      <Form.Control
-                        type="date"
-                        name="birth"
-                        value={formData.birth}
-                        onChange={handleChange}
-                        required
-                      />
+                      <Form.Control type="date" name="birth" value={formData.birth} onChange={handleChange} required />
                     </Form.Group>
                     <Form.Group className="mb-3">
                       <Form.Label>Indirizzo</Form.Label>
-                      <Form.Control
-                        type="text"
-                        name="address"
-                        value={formData.address}
-                        onChange={handleChange}
-                        required
-                      />
+                      <Form.Control type="text" name="address" value={formData.address} onChange={handleChange} required />
                     </Form.Group>
                     <Form.Group className="mb-3">
                       <Form.Label>Codice Fiscale</Form.Label>
-                      <Form.Control
-                        type="text"
-                        name="taxCode"
-                        value={formData.taxCode}
-                        onChange={handleChange}
-                        required
-                      />
+                      <Form.Control type="text" name="taxCode" value={formData.taxCode} onChange={handleChange} required />
                     </Form.Group>
-
                     <Form.Group className="mb-3">
                       <Form.Label>Email</Form.Label>
-                      <Form.Control
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                      />
+                      <Form.Control type="email" name="email" value={formData.email} onChange={handleChange} required />
                     </Form.Group>
-
                     <Form.Group className="mb-3">
                       <Form.Label>Messaggio</Form.Label>
-                      <Form.Control
-                        as="textarea"
-                        rows={3}
-                        name="message"
-                        value={formData.message}
-                        onChange={handleChange}
-                      />
+                      <Form.Control as="textarea" rows={3} name="message" value={formData.message} onChange={handleChange} />
                     </Form.Group>
-
                     <Button type="submit" className="w-100 richiestabutton">
                       📩 Invia Richiesta
                     </Button>
@@ -158,16 +131,12 @@ function Giungla() {
               </Card>
             </Col>
 
-            {/* 🔵 Modulo di Donazione */}
             <Col md={6}>
               <Card className="shadow">
                 <Card.Body>
-                  <h4 className="text-danger">
-                    💖 Dona per Proteggere la Giungla
-                  </h4>
+                  <h4 className="text-danger">💖 Dona per Proteggere la Giungla</h4>
                   <p>
-                    Il tuo aiuto può salvare animali in pericolo come il tarsio,
-                    la civetta delle Filippine e il pappagallo del Luzon.
+                    Il tuo aiuto può salvare animali in pericolo come il tarsio, la civetta delle Filippine e il pappagallo del Luzon.
                   </p>
 
                   <InputGroup className="mb-3">
@@ -190,7 +159,7 @@ function Giungla() {
                     </Form.Select>
                   </Form.Group>
 
-                  <Button className="w-100 donabutton" onClick={handleDonate}>
+                  <Button className="w-100 donabutton" onClick={handleMissionDonate}>
                     💰 Dona Ora
                   </Button>
                 </Card.Body>
@@ -199,37 +168,23 @@ function Giungla() {
                 src={filippine}
                 className={`filippine-image ${isZoomed ? "zoomed" : ""}`}
                 onClick={toggleZoom}
-                alt="Mappa delle filipppine"
+                alt="Mappa delle filippine"
               />
             </Col>
           </Row>
 
-          <div
-            className="mt-5 fw-5 fs-6 text-dark bg-light rounded-4 p-3"
-            id="mission-description"
-          >
+          <div className="mt-5 fw-5 fs-6 text-dark bg-light rounded-4 p-3" id="mission-description">
             <h3>🌍 Missione di Volontariato: Protezione della Giungla 🌿</h3>
 
             <p>
-              Nel cuore dell’<strong>isola di Palawan</strong>, una delle aree
-              più biodiverse delle Filippine, prende vita un’importante
-              iniziativa di conservazione. In collaborazione con il{" "}
-              <strong>governo locale</strong>, questa missione di volontariato
-              mira a proteggere la foresta pluviale e la sua fauna in pericolo.
+              Nel cuore dell’<strong>isola di Palawan</strong>, una delle aree più biodiverse delle Filippine, prende vita un’importante iniziativa di conservazione. In collaborazione con il <strong>governo locale</strong>, questa missione di volontariato mira a proteggere la foresta pluviale e la sua fauna in pericolo.
             </p>
 
             <h4>🔎 Obiettivo della Missione</h4>
             <ul>
-              <li>
-                ✔️ <strong>Monitoraggio e tutela</strong> delle specie in
-                pericolo.
-              </li>
-              <li>
-                ✔️ <strong>Rimboschimento</strong> delle aree degradate.
-              </li>
-              <li>
-                ✔️ <strong>Sensibilizzazione delle comunità locali</strong>.
-              </li>
+              <li>✔️ <strong>Monitoraggio e tutela</strong> delle specie in pericolo.</li>
+              <li>✔️ <strong>Rimboschimento</strong> delle aree degradate.</li>
+              <li>✔️ <strong>Sensibilizzazione delle comunità locali</strong>.</li>
             </ul>
 
             <h4>🏠 Alloggio e Vita sul Campo</h4>
@@ -241,33 +196,18 @@ function Giungla() {
 
             <h4>📅 Piano della Missione (Sintesi)</h4>
             <ul>
-              <li>
-                🟢 <strong>Giorno 1-2</strong>: Arrivo a Manila, trasferimento a
-                Palawan.
-              </li>
-              <li>
-                🟠 <strong>Giorno 3-7</strong>: Monitoraggio della fauna e
-                rimboschimento.
-              </li>
-              <li>
-                🔵 <strong>Giorno 8-10</strong>: Attività educative con le
-                comunità locali.
-              </li>
-              <li>
-                🟣 <strong>Giorno 11-12</strong>: Chiusura missione e
-                preparazione al rientro.
-              </li>
+              <li>🟢 <strong>Giorno 1-2</strong>: Arrivo a Manila, trasferimento a Palawan.</li>
+              <li>🟠 <strong>Giorno 3-7</strong>: Monitoraggio della fauna e rimboschimento.</li>
+              <li>🔵 <strong>Giorno 8-10</strong>: Attività educative con le comunità locali.</li>
+              <li>🟣 <strong>Giorno 11-12</strong>: Chiusura missione e preparazione al rientro.</li>
             </ul>
 
             <h4>📩 Come Partecipare?</h4>
             <p>
-              Compila il modulo per ricevere tutti i{" "}
-              <strong>dettagli della missione</strong>.
+              Compila il modulo per ricevere tutti i <strong>dettagli della missione</strong>.
             </p>
 
-            <p className="fw-bold">
-              🔗 Unisciti a noi e aiuta a proteggere la giungla! 🌳🐾
-            </p>
+            <p className="fw-bold">🔗 Unisciti a noi e aiuta a proteggere la giungla! 🌳🐾</p>
           </div>
         </div>
       </Container>

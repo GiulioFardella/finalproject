@@ -1,7 +1,7 @@
-import { useState } from "react";
-
-import "../../css/mare.css";
+import { useState, useContext } from "react";
+import { UserContext } from "../../contexts/UserContext";
 import australia from "../../assets/mappe/australia.jpeg";
+import "../../css/mare.css";
 import {
   Container,
   Row,
@@ -13,6 +13,8 @@ import {
 } from "react-bootstrap";
 
 function Mare() {
+  const { loggedUser } = useContext(UserContext);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -22,14 +24,14 @@ function Mare() {
     message: "",
   });
 
-  const [donation, setDonation] = useState(10); // Importo di default
+  const [donation, setDonation] = useState(10);
+  const [isZoomed, setIsZoomed] = useState(false);
+  const toggleZoom = () => setIsZoomed(!isZoomed);
 
-  // Gestione input form volontariato
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Gestione invio form
   const handleVolunteerSubmit = (e) => {
     e.preventDefault();
     alert(`Grazie ${formData.name}, la tua richiesta è stata inviata!`);
@@ -42,24 +44,36 @@ function Mare() {
       message: "",
     });
   };
-  const [isZoomed, setIsZoomed] = useState(false);
-  const toggleZoom = () => {
-    setIsZoomed(!isZoomed);
-  };
 
-  // Gestione donazione
-  const handleDonate = () => {
-    alert(`Grazie per la donazione di €${donation}!`);
+  const handleMissionDonate = async () => {
+    if (!loggedUser) {
+      window.location.href = "/registrazione";
+      return;
+    }
+
+    try {
+      await fetch("http://localhost:8080/api/donazioni", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          utenteId: loggedUser.id,
+          importo: parseFloat(donation),
+          tipo: "MISSIONE_MARE",
+        }),
+      });
+      window.location.href = "https://buy.stripe.com/test_fZeg177GB2T33G83cc";
+    } catch (err) {
+      console.error("Errore donazione:", err);
+      alert("Si è verificato un errore con la donazione.");
+    }
   };
 
   return (
     <div className="mare-container">
       <Container className="mt-5">
-        {/* 🟢 Sezione Missione */}
         <div className="text-center">
           <h2 className="text-center mission-title">
-            🌊 Unisciti a tante persone per proteggere le{" "}
-            <span>specie marine in Australia</span>
+            🌊 Unisciti a tante persone per proteggere le <span>specie marine in Australia</span>
           </h2>
 
           <h4 className="text-center mt-5">
@@ -67,9 +81,7 @@ function Mare() {
           </h4>
 
           <p className="text-light text-center mt-4 mission-paragraph">
-            Partecipa alla nostra missione per{" "}
-            <span className="fw-bold">proteggere l'oceano</span> e{" "}
-            <span className="fw-bold">salvaguardare specie in pericolo:</span>
+            Partecipa alla nostra missione per <span className="fw-bold">proteggere l'oceano</span> e <span className="fw-bold">salvaguardare specie in pericolo:</span>
           </p>
 
           <ul className="mission-list">
@@ -81,7 +93,6 @@ function Mare() {
 
         <div className="form-section">
           <Row>
-            {/* 🟠 Form di Partecipazione */}
             <Col md={6}>
               <Card className="shadow">
                 <Card.Body>
@@ -89,67 +100,28 @@ function Mare() {
                   <Form onSubmit={handleVolunteerSubmit}>
                     <Form.Group className="mb-3">
                       <Form.Label>Nome Completo</Form.Label>
-                      <Form.Control
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                      />
+                      <Form.Control type="text" name="name" value={formData.name} onChange={handleChange} required />
                     </Form.Group>
                     <Form.Group className="mb-3">
                       <Form.Label>Data di nascita</Form.Label>
-                      <Form.Control
-                        type="date"
-                        name="birth"
-                        value={formData.birth}
-                        onChange={handleChange}
-                        required
-                      />
+                      <Form.Control type="date" name="birth" value={formData.birth} onChange={handleChange} required />
                     </Form.Group>
                     <Form.Group className="mb-3">
                       <Form.Label>Indirizzo</Form.Label>
-                      <Form.Control
-                        type="text"
-                        name="address"
-                        value={formData.address}
-                        onChange={handleChange}
-                        required
-                      />
+                      <Form.Control type="text" name="address" value={formData.address} onChange={handleChange} required />
                     </Form.Group>
                     <Form.Group className="mb-3">
                       <Form.Label>Codice Fiscale</Form.Label>
-                      <Form.Control
-                        type="text"
-                        name="taxCode"
-                        value={formData.taxCode}
-                        onChange={handleChange}
-                        required
-                      />
+                      <Form.Control type="text" name="taxCode" value={formData.taxCode} onChange={handleChange} required />
                     </Form.Group>
-
                     <Form.Group className="mb-3">
                       <Form.Label>Email</Form.Label>
-                      <Form.Control
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                      />
+                      <Form.Control type="email" name="email" value={formData.email} onChange={handleChange} required />
                     </Form.Group>
-
                     <Form.Group className="mb-3">
                       <Form.Label>Messaggio</Form.Label>
-                      <Form.Control
-                        as="textarea"
-                        rows={3}
-                        name="message"
-                        value={formData.message}
-                        onChange={handleChange}
-                      />
+                      <Form.Control as="textarea" rows={3} name="message" value={formData.message} onChange={handleChange} />
                     </Form.Group>
-
                     <Button type="submit" className="w-100 richiestabutton">
                       📩 Invia Richiesta
                     </Button>
@@ -158,16 +130,12 @@ function Mare() {
               </Card>
             </Col>
 
-            {/* 🔵 Modulo di Donazione */}
             <Col md={6}>
               <Card className="shadow">
                 <Card.Body>
-                  <h4 className="text-danger">
-                    💖 Dona per la Protezione Marina
-                  </h4>
+                  <h4 className="text-danger">💖 Dona per la Protezione Marina</h4>
                   <p>
-                    Il tuo aiuto può salvare animali marini in pericolo come la
-                    tartaruga marina, il delfino tursiope e lo squalo balena.
+                    Il tuo aiuto può salvare animali marini in pericolo come la tartaruga marina, il delfino tursiope e lo squalo balena.
                   </p>
 
                   <InputGroup className="mb-3">
@@ -190,7 +158,7 @@ function Mare() {
                     </Form.Select>
                   </Form.Group>
 
-                  <Button className="w-100 donabutton" onClick={handleDonate}>
+                  <Button className="w-100 donabutton" onClick={handleMissionDonate}>
                     💰 Dona Ora
                   </Button>
                 </Card.Body>
@@ -210,27 +178,14 @@ function Mare() {
             </h3>
 
             <p>
-              Sulle splendide coste di <strong>Melbourne</strong>, una delle
-              aree più ricche di biodiversità marina, prende vita un'importante
-              iniziativa di conservazione ambientale. In collaborazione con il{" "}
-              <strong>governo australiano</strong>, questa missione di
-              volontariato mira a proteggere le specie marine in via
-              d'estinzione e a preservare l'equilibrio dell'ecosistema oceanico.
+              Sulle splendide coste di <strong>Melbourne</strong>, una delle aree più ricche di biodiversità marina, prende vita un'importante iniziativa di conservazione ambientale. In collaborazione con il <strong>governo australiano</strong>, questa missione di volontariato mira a proteggere le specie marine in via d'estinzione e a preservare l'equilibrio dell'ecosistema oceanico.
             </p>
 
             <h4>🔎 Obiettivo della Missione</h4>
             <ul>
-              <li>
-                ✔️ <strong>Monitoraggio e tutela</strong> delle specie marine.
-              </li>
-              <li>
-                ✔️ <strong>Ripristino della barriera corallina</strong> e delle
-                aree costiere.
-              </li>
-              <li>
-                ✔️ <strong>Sensibilizzazione delle comunità locali</strong> e
-                attività educative.
-              </li>
+              <li>✔️ <strong>Monitoraggio e tutela</strong> delle specie marine.</li>
+              <li>✔️ <strong>Ripristino della barriera corallina</strong> e delle aree costiere.</li>
+              <li>✔️ <strong>Sensibilizzazione delle comunità locali</strong> e attività educative.</li>
             </ul>
 
             <h4>🏠 Alloggio e Vita sul Campo</h4>
@@ -243,15 +198,9 @@ function Mare() {
             <h4>📅 Piano della Missione</h4>
             <ul>
               <li>🟢 Giorno 1-2: Arrivo a Melbourne, briefing iniziale.</li>
-              <li>
-                🟠 Giorno 3-7: Monitoraggio delle specie marine e pulizia delle
-                spiagge.
-              </li>
+              <li>🟠 Giorno 3-7: Monitoraggio delle specie marine e pulizia delle spiagge.</li>
               <li>🔵 Giorno 8-10: Ripristino degli habitat marini.</li>
-              <li>
-                🟣 Giorno 11-12: Attività educative con scuole e comunità
-                locali.
-              </li>
+              <li>🟣 Giorno 11-12: Attività educative con scuole e comunità locali.</li>
               <li>🔴 Giorno 13: Debriefing finale e rientro.</li>
             </ul>
 
