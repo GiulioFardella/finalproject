@@ -133,7 +133,7 @@ function Giungla() {
 
             <Col md={6}>
               <Card className="shadow">
-                <Card.Body>
+                <Card.Body className="donation-card">
                   <h4 className="text-danger">💖 Dona per Proteggere la Giungla</h4>
                   <p>
                     Il tuo aiuto può salvare animali in pericolo come il tarsio, la civetta delle Filippine e il pappagallo del Luzon.

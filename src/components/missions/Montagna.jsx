@@ -73,7 +73,8 @@ function Montagna() {
       <Container className="mt-5">
         <div className="text-center">
           <h2 className="mission-title">
-            🦍 Unisciti a noi per proteggere i <span>gorilla di montagna</span> nelle foreste africane!
+            🦍 Unisciti a noi per proteggere i <span>gorilla di montagna</span>{" "}
+            nelle foreste africane!
           </h2>
 
           <h4 className="mt-5">
@@ -81,8 +82,12 @@ function Montagna() {
           </h4>
 
           <p className="mt-4 mission-paragraph">
-            Partecipa alla nostra missione per <span className="fw-bold">proteggere i gorilla di montagna</span> e
-            <span className="fw-bold"> preservare il loro habitat naturale:</span>
+            Partecipa alla nostra missione per{" "}
+            <span className="fw-bold">proteggere i gorilla di montagna</span> e
+            <span className="fw-bold">
+              {" "}
+              preservare il loro habitat naturale:
+            </span>
           </p>
         </div>
 
@@ -95,27 +100,63 @@ function Montagna() {
                   <Form onSubmit={handleVolunteerSubmit}>
                     <Form.Group className="mb-3">
                       <Form.Label>Nome Completo</Form.Label>
-                      <Form.Control type="text" name="name" value={formData.name} onChange={handleChange} required />
+                      <Form.Control
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                      />
                     </Form.Group>
                     <Form.Group className="mb-3">
                       <Form.Label>Data di nascita</Form.Label>
-                      <Form.Control type="date" name="birth" value={formData.birth} onChange={handleChange} required />
+                      <Form.Control
+                        type="date"
+                        name="birth"
+                        value={formData.birth}
+                        onChange={handleChange}
+                        required
+                      />
                     </Form.Group>
                     <Form.Group className="mb-3">
                       <Form.Label>Indirizzo</Form.Label>
-                      <Form.Control type="text" name="address" value={formData.address} onChange={handleChange} required />
+                      <Form.Control
+                        type="text"
+                        name="address"
+                        value={formData.address}
+                        onChange={handleChange}
+                        required
+                      />
                     </Form.Group>
                     <Form.Group className="mb-3">
                       <Form.Label>Codice Fiscale</Form.Label>
-                      <Form.Control type="text" name="taxCode" value={formData.taxCode} onChange={handleChange} required />
+                      <Form.Control
+                        type="text"
+                        name="taxCode"
+                        value={formData.taxCode}
+                        onChange={handleChange}
+                        required
+                      />
                     </Form.Group>
                     <Form.Group className="mb-3">
                       <Form.Label>Email</Form.Label>
-                      <Form.Control type="email" name="email" value={formData.email} onChange={handleChange} required />
+                      <Form.Control
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                      />
                     </Form.Group>
                     <Form.Group className="mb-3">
                       <Form.Label>Messaggio</Form.Label>
-                      <Form.Control as="textarea" rows={3} name="message" value={formData.message} onChange={handleChange} />
+                      <Form.Control
+                        as="textarea"
+                        rows={3}
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                      />
                     </Form.Group>
                     <Button type="submit" className="w-100 richiestabutton">
                       📩 Invia Richiesta
@@ -127,10 +168,13 @@ function Montagna() {
 
             <Col md={6}>
               <Card className="shadow">
-                <Card.Body>
-                  <h4 className="text-danger">💖 Dona per la Protezione dei Gorilla</h4>
+                <Card.Body className="donation-card">
+                  <h4 className="text-danger">
+                    💖 Dona per la Protezione dei Gorilla
+                  </h4>
                   <p>
-                    Il tuo aiuto può garantire la sopravvivenza dei gorilla di montagna e preservare la loro foresta.
+                    Il tuo aiuto può garantire la sopravvivenza dei gorilla di
+                    montagna e preservare la loro foresta.
                   </p>
                   <InputGroup className="mb-3">
                     <InputGroup.Text>€</InputGroup.Text>
@@ -151,7 +195,10 @@ function Montagna() {
                       <option>Bonifico Bancario</option>
                     </Form.Select>
                   </Form.Group>
-                  <Button className="w-100 donabutton" onClick={handleMissionDonate}>
+                  <Button
+                    className="w-100 donabutton"
+                    onClick={handleMissionDonate}
+                  >
                     💰 Dona Ora
                   </Button>
                 </Card.Body>
@@ -171,7 +218,9 @@ function Montagna() {
             🌍 Missione di Volontariato: Protezione dei Gorilla di Montagna 🦍
           </h3>
           <p>
-            Nelle foreste pluviali di <strong>Ruanda, Uganda e Congo</strong>, un'iniziativa di conservazione ambientale mira a salvaguardare i gorilla di montagna.
+            Nelle foreste pluviali di <strong>Ruanda, Uganda e Congo</strong>,
+            un'iniziativa di conservazione ambientale mira a salvaguardare i
+            gorilla di montagna.
           </p>
 
           <h4>🔎 Obiettivo della Missione</h4>
@@ -189,7 +238,13 @@ function Montagna() {
           </ul>
           <h4>📩 Come Partecipare?</h4>
           <p>
-            Compila il modulo di partecipazione! Dopo l'invio, riceverai una risposta con tutti i <strong>dettagli della missione</strong>, incluse le <strong>date disponibili, i costi coperti e i requisiti di partecipazione</strong>.
+            Compila il modulo di partecipazione! Dopo l'invio, riceverai una
+            risposta con tutti i <strong>dettagli della missione</strong>,
+            incluse le{" "}
+            <strong>
+              date disponibili, i costi coperti e i requisiti di partecipazione
+            </strong>
+            .
           </p>
 
           <p className="fw-bold">

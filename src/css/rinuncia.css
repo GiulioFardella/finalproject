@@ -1,3 +1,34 @@
 .rinuncia-form {
     margin-bottom: 5rem;
-}
+    padding: 2rem !important;
+    background: rgba(255, 255, 255, 0.2) !important;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 20px;
+    color: black;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  }
+  
+.sfondorinuncia {
+    background-image: url(../assets/polar.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 60px 20px;
+    position: relative;
+  
+  }
+ 
+  .sfondorinuncia::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+   
+    z-index: 0;
+  }
+  
+  .rinuncia-container {
+    position: relative;
+    z-index: 1;
+  }
+  

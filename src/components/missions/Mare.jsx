@@ -132,7 +132,7 @@ function Mare() {
 
             <Col md={6}>
               <Card className="shadow">
-                <Card.Body>
+              <Card.Body className="donation-card">
                   <h4 className="text-danger">💖 Dona per la Protezione Marina</h4>
                   <p>
                     Il tuo aiuto può salvare animali marini in pericolo come la tartaruga marina, il delfino tursiope e lo squalo balena.

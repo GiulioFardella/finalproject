@@ -38,6 +38,8 @@
 #mission-description {
   list-style: none;
   text-shadow: none;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 .donabutton {
   background-color: var(--blue);
@@ -75,4 +77,10 @@
   height: 100%;
   background: rgba(0, 0, 0, 0.7);
   z-index: 999;
+}
+
+.donation-card {
+  background-color: var(--green) !important;
+  color: white;
+  border: none;
 }

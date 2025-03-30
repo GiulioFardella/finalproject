@@ -87,7 +87,7 @@ function Profile() {
 
   return (
     <div className="profile-container">
-      <Container>
+      <Container className="profile11">
         <Row className="justify-content-center">
           <Col md={8}>
             <Card className="profile-card">

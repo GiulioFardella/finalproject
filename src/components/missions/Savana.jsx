@@ -73,7 +73,8 @@ function Savana() {
       <Container className="mt-5">
         <div className="text-center">
           <h2 className="text-center mission-title">
-            🌿 Unisciti a tante persone per proteggere le <span>specie della Savana</span>
+            🌿 Unisciti a tante persone per proteggere le{" "}
+            <span>specie della Savana</span>
           </h2>
 
           <h4 className="text-center mt-5">
@@ -81,7 +82,9 @@ function Savana() {
           </h4>
 
           <p className=" text-center mt-4 mission-paragraph">
-            Partecipa alla nostra missione più ardua per <span className="fw-bold">proteggere l'habitat</span> e <span className="fw-bold">salvaguardare specie in pericolo:</span>
+            Partecipa alla nostra missione più ardua per{" "}
+            <span className="fw-bold">proteggere l'habitat</span> e{" "}
+            <span className="fw-bold">salvaguardare specie in pericolo:</span>
           </p>
 
           <ul className="mission-list">
@@ -100,27 +103,63 @@ function Savana() {
                   <Form onSubmit={handleVolunteerSubmit}>
                     <Form.Group className="mb-3">
                       <Form.Label>Nome Completo</Form.Label>
-                      <Form.Control type="text" name="name" value={formData.name} onChange={handleChange} required />
+                      <Form.Control
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                      />
                     </Form.Group>
                     <Form.Group className="mb-3">
                       <Form.Label>Data di nascita</Form.Label>
-                      <Form.Control type="date" name="birth" value={formData.birth} onChange={handleChange} required />
+                      <Form.Control
+                        type="date"
+                        name="birth"
+                        value={formData.birth}
+                        onChange={handleChange}
+                        required
+                      />
                     </Form.Group>
                     <Form.Group className="mb-3">
                       <Form.Label>Indirizzo</Form.Label>
-                      <Form.Control type="text" name="address" value={formData.address} onChange={handleChange} required />
+                      <Form.Control
+                        type="text"
+                        name="address"
+                        value={formData.address}
+                        onChange={handleChange}
+                        required
+                      />
                     </Form.Group>
                     <Form.Group className="mb-3">
                       <Form.Label>Codice Fiscale</Form.Label>
-                      <Form.Control type="text" name="taxCode" value={formData.taxCode} onChange={handleChange} required />
+                      <Form.Control
+                        type="text"
+                        name="taxCode"
+                        value={formData.taxCode}
+                        onChange={handleChange}
+                        required
+                      />
                     </Form.Group>
                     <Form.Group className="mb-3">
                       <Form.Label>Email</Form.Label>
-                      <Form.Control type="email" name="email" value={formData.email} onChange={handleChange} required />
+                      <Form.Control
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                      />
                     </Form.Group>
                     <Form.Group className="mb-3">
                       <Form.Label>Messaggio</Form.Label>
-                      <Form.Control as="textarea" rows={3} name="message" value={formData.message} onChange={handleChange} />
+                      <Form.Control
+                        as="textarea"
+                        rows={3}
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                      />
                     </Form.Group>
                     <Button type="submit" className="w-100 richiestabutton">
                       📩 Invia Richiesta
@@ -132,10 +171,13 @@ function Savana() {
 
             <Col md={6}>
               <Card className="shadow">
-                <Card.Body>
-                  <h4 className="text-danger">💖 Dona per le Specie della Savana</h4>
+                <Card.Body className="donation-card">
+                  <h4 className="text-danger">
+                    💖 Dona per le Specie della Savana
+                  </h4>
                   <p>
-                    Il tuo aiuto può salvare animali in pericolo come il leone africano, l'elefante della savana e la giraffa masai.
+                    Il tuo aiuto può salvare animali in pericolo come il leone
+                    africano, l'elefante della savana e la giraffa masai.
                   </p>
 
                   <InputGroup className="mb-3">
@@ -158,7 +200,10 @@ function Savana() {
                     </Form.Select>
                   </Form.Group>
 
-                  <Button className="w-100 donabutton" onClick={handleMissionDonate}>
+                  <Button
+                    className="w-100 donabutton"
+                    onClick={handleMissionDonate}
+                  >
                     💰 Dona Ora
                   </Button>
                 </Card.Body>
@@ -174,18 +219,32 @@ function Savana() {
 
           <div className="mission-description mt-5">
             <h3>
-              🌍 Missione di Volontariato: Protezione delle Specie della Savana 🦁
+              🌍 Missione di Volontariato: Protezione delle Specie della Savana
+              🦁
             </h3>
 
             <p>
-              Nel cuore della <strong>Savana africana</strong>, un ecosistema straordinario e ricco di biodiversità, nasce un'importante iniziativa di conservazione ambientale. In collaborazione con le <strong>autorità locali della Tanzania</strong>, questa missione di volontariato ha l'obiettivo di proteggere le specie in via d'estinzione e preservare l'equilibrio naturale della savana.
+              Nel cuore della <strong>Savana africana</strong>, un ecosistema
+              straordinario e ricco di biodiversità, nasce un'importante
+              iniziativa di conservazione ambientale. In collaborazione con le{" "}
+              <strong>autorità locali della Tanzania</strong>, questa missione
+              di volontariato ha l'obiettivo di proteggere le specie in via
+              d'estinzione e preservare l'equilibrio naturale della savana.
             </p>
 
             <h4>🔎 Obiettivo della Missione</h4>
             <ul>
-              <li>✔️ <strong>Monitoraggio e tutela</strong> della fauna selvatica.</li>
-              <li>✔️ <strong>Ripristino degli habitat</strong> danneggiati dalla deforestazione e dal bracconaggio.</li>
-              <li>✔️ <strong>Sensibilizzazione delle comunità locali</strong> per la protezione degli ecosistemi.</li>
+              <li>
+                ✔️ <strong>Monitoraggio e tutela</strong> della fauna selvatica.
+              </li>
+              <li>
+                ✔️ <strong>Ripristino degli habitat</strong> danneggiati dalla
+                deforestazione e dal bracconaggio.
+              </li>
+              <li>
+                ✔️ <strong>Sensibilizzazione delle comunità locali</strong> per
+                la protezione degli ecosistemi.
+              </li>
             </ul>
 
             <h4>🏠 Alloggio e Vita sul Campo</h4>
@@ -197,20 +256,43 @@ function Savana() {
 
             <h4>📅 Piano della Missione (Sintesi)</h4>
             <ul>
-              <li>🟢 <strong>Giorno 1-2</strong>: Arrivo ad Arusha, trasferimento al campo base, briefing iniziale.</li>
-              <li>🟠 <strong>Giorno 3-7</strong>: Monitoraggio della fauna, raccolta dati e installazione di fototrappole.</li>
-              <li>🔵 <strong>Giorno 8-10</strong>: Ripristino di aree danneggiate e supporto ai progetti di riforestazione.</li>
-              <li>🟣 <strong>Giorno 11-12</strong>: Attività educative con le comunità locali.</li>
-              <li>🔴 <strong>Giorno 13</strong>: Chiusura della missione, debriefing e rientro.</li>
+              <li>
+                🟢 <strong>Giorno 1-2</strong>: Arrivo ad Arusha, trasferimento
+                al campo base, briefing iniziale.
+              </li>
+              <li>
+                🟠 <strong>Giorno 3-7</strong>: Monitoraggio della fauna,
+                raccolta dati e installazione di fototrappole.
+              </li>
+              <li>
+                🔵 <strong>Giorno 8-10</strong>: Ripristino di aree danneggiate
+                e supporto ai progetti di riforestazione.
+              </li>
+              <li>
+                🟣 <strong>Giorno 11-12</strong>: Attività educative con le
+                comunità locali.
+              </li>
+              <li>
+                🔴 <strong>Giorno 13</strong>: Chiusura della missione,
+                debriefing e rientro.
+              </li>
             </ul>
 
             <h4>📩 Come Partecipare?</h4>
             <p>
-              Compila il modulo di partecipazione! Dopo l'invio, riceverai una risposta con tutti i <strong>dettagli della missione</strong>, incluse le <strong>date disponibili, i costi coperti e i requisiti di partecipazione</strong>.
+              Compila il modulo di partecipazione! Dopo l'invio, riceverai una
+              risposta con tutti i <strong>dettagli della missione</strong>,
+              incluse le{" "}
+              <strong>
+                date disponibili, i costi coperti e i requisiti di
+                partecipazione
+              </strong>
+              .
             </p>
 
             <p className="fw-bold">
-              🔗 Unisciti a noi e aiuta a proteggere il futuro della Savana! 🌱🐘
+              🔗 Unisciti a noi e aiuta a proteggere il futuro della Savana!
+              🌱🐘
             </p>
           </div>
         </div>

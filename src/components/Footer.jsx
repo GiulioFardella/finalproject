@@ -56,7 +56,7 @@ const Footer = () => {
         <Row className="mt-4 border-top pt-3 text-center">
           <Col>
             <p className="mb-0">ZooVersee 2025 - Costruiamo un mondo in cui le persone possano vivere in armonia con la natura</p>
-            <p className="text-muted">Web design: Giulio Fardella</p>
+            <p className="text-light mt-2 fs-5">Web design and developing : Giulio Fardella - 2025 </p>
           </Col>
         </Row>
       </Container>

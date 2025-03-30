@@ -131,7 +131,7 @@ function Deserto() {
 
             <Col md={6}>
               <Card className="shadow">
-                <Card.Body>
+                <Card.Body className="donation-card">
                   <h4 className="text-danger">💖 Dona per le Specie del Deserto</h4>
                   <p>
                     Il tuo aiuto può salvare animali in pericolo come la gazzella araba, il gatto delle sabbie e la vipera delle sabbie.
