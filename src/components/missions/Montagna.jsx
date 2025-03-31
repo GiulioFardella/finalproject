@@ -96,7 +96,7 @@ function Montagna() {
             <Col md={6}>
               <Card className="shadow">
                 <Card.Body>
-                  <h4 className="text-success">🤝 Partecipa alla Missione</h4>
+                  <h4 className="text-success"> Partecipa alla Missione</h4>
                   <Form onSubmit={handleVolunteerSubmit}>
                     <Form.Group className="mb-3">
                       <Form.Label>Nome Completo</Form.Label>
@@ -169,8 +169,8 @@ function Montagna() {
             <Col md={6}>
               <Card className="shadow">
                 <Card.Body className="donation-card">
-                  <h4 className="text-danger">
-                    💖 Dona per la Protezione dei Gorilla
+                  <h4 className="text-warning fw-bold">
+                     Dona per la Protezione dei Gorilla
                   </h4>
                   <p>
                     Il tuo aiuto può garantire la sopravvivenza dei gorilla di

@@ -95,7 +95,7 @@ function Deserto() {
             <Col md={6}>
               <Card className="shadow">
                 <Card.Body>
-                  <h4 className="text-success">🤝 Partecipa alla Missione</h4>
+                  <h4 className="text-success">Partecipa alla Missione</h4>
                   <Form onSubmit={handleVolunteerSubmit}>
                     <Form.Group className="mb-3">
                       <Form.Label>Nome Completo</Form.Label>
@@ -132,7 +132,7 @@ function Deserto() {
             <Col md={6}>
               <Card className="shadow">
                 <Card.Body className="donation-card">
-                  <h4 className="text-danger">💖 Dona per le Specie del Deserto</h4>
+                  <h4 className="text-warning fw-bold"> Dona per le Specie del Deserto</h4>
                   <p>
                     Il tuo aiuto può salvare animali in pericolo come la gazzella araba, il gatto delle sabbie e la vipera delle sabbie.
                   </p>
