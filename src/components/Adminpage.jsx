@@ -83,6 +83,7 @@ function AdminPage() {
   };
 
   return (
+    <div className="generalAdmin">
     <Container className="admin-container">
       <h2 className="admin-title">Area Admin - Gestione Animali 🐾</h2>
 
@@ -183,6 +184,7 @@ function AdminPage() {
         </Modal.Body>
       </Modal>
     </Container>
+    </div> 
   );
 }
 

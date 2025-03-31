@@ -1,6 +1,6 @@
 .profile-container {
   padding: 3rem;
-  background-image: url(../assets/coral.jpg);
+  background-image: url(../assets/orto.jpg);
   background-size: cover;
   min-height: 100vh; 
   display: flex;
@@ -37,7 +37,7 @@
 }
 .errorLog {
   min-height: 100vh;
-  background-image: url(../assets/coral.jpg);
+  background-image: url(../assets/orto.jpg);
   background-size: cover;
   background-position: center;
   display: flex;

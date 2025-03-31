@@ -2,12 +2,15 @@
   margin-top: 4rem;
   margin-bottom: 4rem;
 }
-
+.generalAdmin{
+  background-image: url(../assets/coral.jpg);
+  background-size: cover;
+}
 .admin-title {
   font-size: 2rem;
   font-weight: bold;
   color: var(--purple);
-  margin-bottom: 2rem;
+
   text-align: center;
 }
 
@@ -31,3 +34,4 @@
   background-color: var(--orange);
   border: none;
 }
+

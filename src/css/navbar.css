@@ -13,6 +13,7 @@ body {
 
 .custom-dropdown {
   font-size: 1rem;
+  
   margin-right: 1rem;
 }
 
@@ -59,7 +60,7 @@ body {
 
 #basic-nav-dropdown {
   font-style: italic;
-  font-weight: 200;
+  font-weight: 300;
 }
 
 #generalnavbar {
