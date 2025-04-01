@@ -85,11 +85,10 @@ function AdminPage() {
   return (
     <div className="generalAdmin">
     <Container className="admin-container">
-      <h2 className="admin-title">Area Admin - Gestione Animali 🐾</h2>
-
+     
       <Button
-        variant="success"
-        className="mb-4"
+        variant="warning"
+        className="mb-4 mt-5 fs-4"
         onClick={() => handleShowModal()}
       >
         ➕ Aggiungi Animale
@@ -124,6 +123,7 @@ function AdminPage() {
                 </Button>{" "}
                 <Button
                   variant="danger"
+                  className="mt-2"
                   size="sm"
                   onClick={() => handleDelete(animale.id)}
                 >
